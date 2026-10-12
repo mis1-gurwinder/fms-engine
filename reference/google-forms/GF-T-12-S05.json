@@ -1,0 +1,113 @@
+{
+  "version": "v9",
+  "engine": "FMS Engine",
+  "integration": "Google Forms",
+  "source_of_truth": "PostgreSQL",
+  "source_document": "DFW-TAT-PF-T12-V2_Daily_Inventory.html",
+  "submission_does_not_complete_stage": true,
+  "pc_review_required": true,
+  "next_stage_activation": "Only after PC marks this step DONE and configured completion conditions pass",
+  "audit_fields": [
+    "form_sent_at",
+    "form_submitted_at",
+    "pc_reviewed_at",
+    "actual_completed_at",
+    "delay_minutes"
+  ],
+  "form_id": "GF-T-12-S05",
+  "fms": {
+    "code": "T-12",
+    "name": "V2 Daily Inventory"
+  },
+  "stage": {
+    "code": "T-12-S05",
+    "name": "Daily Inventory MIS Report — Sent to MD + Yash",
+    "what": "Daily Inventory MIS Report — Sent to MD + Yash",
+    "how": "Report covers: RM received today, RM in fumigation (lot-wise), RM cleared + available, RM consumed in production, PM received + consumed, FG produced today (SKU-wise), FG dispatched today, FG closing balance (SKU-wise), Running loss % all 4 materials vs limits. Highlight any alerts in RED. Email + WhatsApp to MD + Yash. Daily MIS Report (email + WhatsApp to Rahul sir + Yash) Feeds T-18 (Daily Production + Inventory MIS Report) MONTHLY: Tata GMP audit (their team visits). Dinero also does own monthly GMP audit. Both separate from quarterly physical audit (T-13). DAILY INVENTORY RECONCILED — LOSS % TRACKED — MD INFORMED — QUARTERLY AUDIT READINESS MAINTAINED",
+    "who": "Bhupendra Rajput",
+    "when": "By 7:00 PM daily — non-negotiable"
+  },
+  "fields": [
+    {
+      "name": "FMS Instance ID",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Stage Code",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Responsible Person",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Submission Timestamp",
+      "type": "datetime",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Planned Date",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "Planned Time",
+      "type": "time",
+      "required": true
+    },
+    {
+      "name": "Step Result",
+      "type": "dropdown",
+      "required": true,
+      "options": [
+        "DONE",
+        "NOT DONE",
+        "HOLD",
+        "EXCEPTION"
+      ]
+    },
+    {
+      "name": "Actual Completion Timestamp",
+      "type": "datetime",
+      "required": false
+    },
+    {
+      "name": "Remarks",
+      "type": "long_text",
+      "required": false
+    },
+    {
+      "name": "Evidence / Photos",
+      "type": "file",
+      "required": false
+    }
+  ],
+  "checklist": [
+    "Acknowledge step: Daily Inventory MIS Report — Sent to MD + Yash",
+    "Required information recorded",
+    "Required evidence attached",
+    "Exceptions/deviations recorded if applicable"
+  ],
+  "evidence": [
+    "Required source/process evidence",
+    "Photos/documents where applicable"
+  ],
+  "pc_actions": [
+    "Review submission",
+    "Mark DONE",
+    "Return for correction",
+    "Place HOLD",
+    "Create exception",
+    "Add comment"
+  ],
+  "notes": [
+    "Generated from the Tata/Palda process-flow documentation. Verify final Google Form question wording with process owner before production."
+  ]
+}

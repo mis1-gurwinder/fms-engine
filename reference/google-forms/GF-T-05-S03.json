@@ -1,0 +1,113 @@
+{
+  "version": "v9",
+  "engine": "FMS Engine",
+  "integration": "Google Forms",
+  "source_of_truth": "PostgreSQL",
+  "source_document": "DFW-TAT-PF-T05_PostFum_QC.html",
+  "submission_does_not_complete_stage": true,
+  "pc_review_required": true,
+  "next_stage_activation": "Only after PC marks this step DONE and configured completion conditions pass",
+  "audit_fields": [
+    "form_sent_at",
+    "form_submitted_at",
+    "pc_reviewed_at",
+    "actual_completed_at",
+    "delay_minutes"
+  ],
+  "form_id": "GF-T-05-S03",
+  "fms": {
+    "code": "T-05",
+    "name": "| DFPL Palda"
+  },
+  "stage": {
+    "code": "T-05-S03",
+    "name": "Post-Fumigation Parameter Testing",
+    "what": "Post-Fumigation Parameter Testing",
+    "how": "Sample taken from multiple points of lot. Test: Moisture (critical — must not have increased during fumigation), Infestation check (live insects NIL post fumigation), Broken%, Discolour%, Weevil/larva status (Makhana). Sensory soaking test for pulses (TCPL/F-PL/DF/FM 20). Same format as incoming: TCPL/F-PL/OM/FM-15 (Pulses) / TCPL/DFN/3P/1.5 (Makhana). Post-Fum RM Analysis TCPL/F-PL/OM/FM-15 (Pulses) TCPL/DFN/3P/1.5 (Makhana) + Sensory FM-20 Post-Fumigation QC Result? Who: Tata QC Supervisor  When: Post testing CLEARED FAIL / HOLD RE-FUMIGATE LOT ON HOLD Bhupendra + Tata decide action.",
+    "who": "Tata QC + Lucky / Ashish (jointly)",
+    "when": "Same day as fumigation opening"
+  },
+  "fields": [
+    {
+      "name": "FMS Instance ID",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Stage Code",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Responsible Person",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Submission Timestamp",
+      "type": "datetime",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Planned Date",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "Planned Time",
+      "type": "time",
+      "required": true
+    },
+    {
+      "name": "Step Result",
+      "type": "dropdown",
+      "required": true,
+      "options": [
+        "DONE",
+        "NOT DONE",
+        "HOLD",
+        "EXCEPTION"
+      ]
+    },
+    {
+      "name": "Actual Completion Timestamp",
+      "type": "datetime",
+      "required": false
+    },
+    {
+      "name": "Remarks",
+      "type": "long_text",
+      "required": false
+    },
+    {
+      "name": "Evidence / Photos",
+      "type": "file",
+      "required": false
+    }
+  ],
+  "checklist": [
+    "Acknowledge step: Post-Fumigation Parameter Testing",
+    "Required information recorded",
+    "Required evidence attached",
+    "Exceptions/deviations recorded if applicable"
+  ],
+  "evidence": [
+    "Required source/process evidence",
+    "Photos/documents where applicable"
+  ],
+  "pc_actions": [
+    "Review submission",
+    "Mark DONE",
+    "Return for correction",
+    "Place HOLD",
+    "Create exception",
+    "Add comment"
+  ],
+  "notes": [
+    "Generated from the Tata/Palda process-flow documentation. Verify final Google Form question wording with process owner before production."
+  ]
+}

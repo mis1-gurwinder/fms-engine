@@ -1,0 +1,113 @@
+{
+  "version": "v9",
+  "engine": "FMS Engine",
+  "integration": "Google Forms",
+  "source_of_truth": "PostgreSQL",
+  "source_document": "DFW-TAT-PF-T07-V2_Pulses_Packing.html",
+  "submission_does_not_complete_stage": true,
+  "pc_review_required": true,
+  "next_stage_activation": "Only after PC marks this step DONE and configured completion conditions pass",
+  "audit_fields": [
+    "form_sent_at",
+    "form_submitted_at",
+    "pc_reviewed_at",
+    "actual_completed_at",
+    "delay_minutes"
+  ],
+  "form_id": "GF-T-07-S12",
+  "fms": {
+    "code": "T-07",
+    "name": "V2"
+  },
+  "stage": {
+    "code": "T-07-S12",
+    "name": "Master Bag Packing + Hand-Code + Stitch + Palletize",
+    "what": "Master Bag Packing + Hand-Code + Stitch + Palletize",
+    "how": "Manually pack into master bags: 10kg (20x500g or 10x1kg) or 25kg (50x500g or 25x1kg). Stitch master bag. Hand-coder on outer bag: pack date + expiry date + batch no. Write gross weight on bag. Palletize. Move to FG area. Dharam Singh takes custody — FG Stock Register DFPL/FGD/SOP-1/FRM/02 updated. FG Stock Register DFPL/FGD/SOP-1/FRM/02 (Dharam Singh) Opening stock + production today + dispatch + FG closing. Signed: Dharam + Bhupendra SECTION 3 — QC CHECKPOINTS (RUNNING IN PARALLEL THROUGHOUT PRODUCTION)",
+    "who": "Belt-end labour. Naveen supervises. Dharam Singh takes FG.",
+    "when": "Continuously as pouches complete inspection"
+  },
+  "fields": [
+    {
+      "name": "FMS Instance ID",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Stage Code",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Responsible Person",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Submission Timestamp",
+      "type": "datetime",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Planned Date",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "Planned Time",
+      "type": "time",
+      "required": true
+    },
+    {
+      "name": "Step Result",
+      "type": "dropdown",
+      "required": true,
+      "options": [
+        "DONE",
+        "NOT DONE",
+        "HOLD",
+        "EXCEPTION"
+      ]
+    },
+    {
+      "name": "Actual Completion Timestamp",
+      "type": "datetime",
+      "required": false
+    },
+    {
+      "name": "Remarks",
+      "type": "long_text",
+      "required": false
+    },
+    {
+      "name": "Evidence / Photos",
+      "type": "file",
+      "required": false
+    }
+  ],
+  "checklist": [
+    "Acknowledge step: Master Bag Packing + Hand-Code + Stitch + Palletize",
+    "Required information recorded",
+    "Required evidence attached",
+    "Exceptions/deviations recorded if applicable"
+  ],
+  "evidence": [
+    "Required source/process evidence",
+    "Photos/documents where applicable"
+  ],
+  "pc_actions": [
+    "Review submission",
+    "Mark DONE",
+    "Return for correction",
+    "Place HOLD",
+    "Create exception",
+    "Add comment"
+  ],
+  "notes": [
+    "Generated from the Tata/Palda process-flow documentation. Verify final Google Form question wording with process owner before production."
+  ]
+}

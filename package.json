@@ -1,0 +1,10 @@
+{
+  "name": "fms-engine-v3",
+  "private": true,
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "dev": "npm --prefix server run dev & npm --prefix client run dev",
+    "start:server": "npm --prefix server run start",
+    "start:client": "npm --prefix client run dev"
+  }
+}

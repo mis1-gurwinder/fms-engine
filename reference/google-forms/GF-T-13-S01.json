@@ -1,0 +1,107 @@
+{
+  "version": "v9",
+  "engine": "FMS Engine",
+  "integration": "Google Forms",
+  "source_of_truth": "PostgreSQL",
+  "source_document": "DFW-TAT-PF-T13-V2_Quarterly_Audit.html",
+  "submission_does_not_complete_stage": true,
+  "pc_review_required": true,
+  "next_stage_activation": "Only after PC marks this step DONE and configured completion conditions pass",
+  "audit_fields": [
+    "form_sent_at",
+    "form_submitted_at",
+    "pc_reviewed_at",
+    "actual_completed_at",
+    "delay_minutes"
+  ],
+  "form_id": "GF-T-13-S01",
+  "fms": {
+    "code": "T-13",
+    "name": "V2 Quarterly Audit"
+  },
+  "stage": {
+    "code": "T-13-S01",
+    "name": "Internal Stock Reconciliation — All SAP Entries Completed",
+    "what": "Internal Stock Reconciliation — All SAP Entries Completed",
+    "how": "Pull all pending SAP entries: any missed GRs (RM inward, production, dispatch). Complete ALL SAP entries to ensure system is 100% current. Run internal stock reconciliation: physical vs SAP for all RM, PM, FG lots — all 4 material categories. Resolve all variances internally BEFORE auditor arrives. No surprises. Pre-Audit Reconciliation Sheet (Bhupendra) All SAP entries current. All variances explained. Filed in Drive.",
+    "who": "Bhupendra Rajput + Sunil Kumar Sen",
+    "when": "1 week before audit date"
+  },
+  "fields": [
+    {
+      "name": "FMS Instance ID",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Stage Code",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Responsible Person",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Submission Timestamp",
+      "type": "datetime",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Closing Stock Statement",
+      "type": "file",
+      "required": true
+    },
+    {
+      "name": "Auditor Briefing Evidence",
+      "type": "file",
+      "required": false
+    },
+    {
+      "name": "Physical Count Record",
+      "type": "file",
+      "required": true
+    },
+    {
+      "name": "Signed Approvals / Signatures Evidence",
+      "type": "file",
+      "required": true
+    },
+    {
+      "name": "SAP Credit Update Reference",
+      "type": "text",
+      "required": false
+    },
+    {
+      "name": "Remarks",
+      "type": "long_text",
+      "required": false
+    }
+  ],
+  "checklist": [
+    "Acknowledge step: Internal Stock Reconciliation — All SAP Entries Completed",
+    "Required information recorded",
+    "Required evidence attached",
+    "Exceptions/deviations recorded if applicable"
+  ],
+  "evidence": [
+    "Required source/process evidence",
+    "Photos/documents where applicable"
+  ],
+  "pc_actions": [
+    "Review submission",
+    "Mark DONE",
+    "Return for correction",
+    "Place HOLD",
+    "Create exception",
+    "Add comment"
+  ],
+  "notes": [
+    "Generated from the Tata/Palda process-flow documentation. Verify final Google Form question wording with process owner before production."
+  ]
+}

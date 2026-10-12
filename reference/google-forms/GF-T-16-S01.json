@@ -1,0 +1,112 @@
+{
+  "version": "v9",
+  "engine": "FMS Engine",
+  "integration": "Google Forms",
+  "source_of_truth": "PostgreSQL",
+  "source_document": "DFW-TAT-PF-T16-V2_Monthly_Invoice.html",
+  "submission_does_not_complete_stage": true,
+  "pc_review_required": true,
+  "next_stage_activation": "Only after PC marks this step DONE and configured completion conditions pass",
+  "audit_fields": [
+    "form_sent_at",
+    "form_submitted_at",
+    "pc_reviewed_at",
+    "actual_completed_at",
+    "delay_minutes"
+  ],
+  "form_id": "GF-T-16-S01",
+  "fms": {
+    "code": "T-16",
+    "name": "V2 Monthly Invoice"
+  },
+  "stage": {
+    "code": "T-16-S01",
+    "name": "Hand-Sort Invoice Raised IMMEDIATELY on Deviation",
+    "what": "Hand-Sort Invoice Raised IMMEDIATELY on Deviation",
+    "how": "When Lucky / Ashish marks hand-sort deviation on a lot (T-05 or T-06): Bhupendra calculates lot qty (MT) x Rs.750/ton. Notifies Yash immediately. Yash raises separate invoice on same day or next working day. Do NOT accumulate to month-end. Applies to: Kabuli Chana, Kala Chana, Rajmah, Peanut. Also applies to Makhana hand-sort at Rs.4/kg. Hand-Sort Immediate Invoice (Yash) Pulses: Rs.750/ton. Makhana: Rs.4/kg. Same day as deviation. NOT month-end. MONTHLY CYCLE: BILLING DATA COMPILED BY 28th — ALL 4 INVOICES RAISED BY 2nd-3rd OF FOLLOWING MONTH ALL RATES CONFIRMED:  Conversion/ton: 100g = Rs.9,530 200g = Rs.7,030 500g = Rs.1,846 1kg = Rs.1,351  Hand-sort/ton: Rs.750 (Kabuli, Kala Chana, Rajmah, Peanut)  Re-fumigation/ton: Rs.53 Courier: Actuals Job work packing: Rs.4/kg",
+    "who": "Bhupendra (data) + Yash Sharma (invoice)",
+    "when": "When QA marks deviation on lot requiring hand-sorting — same day"
+  },
+  "fields": [
+    {
+      "name": "FMS Instance ID",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Stage Code",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Responsible Person",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Submission Timestamp",
+      "type": "datetime",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Hand-Sort Invoice Reference",
+      "type": "text",
+      "required": false
+    },
+    {
+      "name": "Tally Invoice References",
+      "type": "file",
+      "required": true
+    },
+    {
+      "name": "Invoice Dispatch Evidence",
+      "type": "file",
+      "required": true
+    },
+    {
+      "name": "Tata Reconciliation Result",
+      "type": "dropdown",
+      "required": true,
+      "options": [
+        "APPROVED",
+        "QUERY",
+        "PENDING"
+      ]
+    },
+    {
+      "name": "Query Resolution Evidence",
+      "type": "file",
+      "required": false
+    },
+    {
+      "name": "Remarks",
+      "type": "long_text",
+      "required": false
+    }
+  ],
+  "checklist": [
+    "Acknowledge step: Hand-Sort Invoice Raised IMMEDIATELY on Deviation",
+    "Required information recorded",
+    "Required evidence attached",
+    "Exceptions/deviations recorded if applicable"
+  ],
+  "evidence": [
+    "Required source/process evidence",
+    "Photos/documents where applicable"
+  ],
+  "pc_actions": [
+    "Review submission",
+    "Mark DONE",
+    "Return for correction",
+    "Place HOLD",
+    "Create exception",
+    "Add comment"
+  ],
+  "notes": [
+    "Generated from the Tata/Palda process-flow documentation. Verify final Google Form question wording with process owner before production."
+  ]
+}

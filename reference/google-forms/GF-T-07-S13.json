@@ -1,0 +1,113 @@
+{
+  "version": "v9",
+  "engine": "FMS Engine",
+  "integration": "Google Forms",
+  "source_of_truth": "PostgreSQL",
+  "source_document": "DFW-TAT-PF-T07-V2_Pulses_Packing.html",
+  "submission_does_not_complete_stage": true,
+  "pc_review_required": true,
+  "next_stage_activation": "Only after PC marks this step DONE and configured completion conditions pass",
+  "audit_fields": [
+    "form_sent_at",
+    "form_submitted_at",
+    "pc_reviewed_at",
+    "actual_completed_at",
+    "delay_minutes"
+  ],
+  "form_id": "GF-T-07-S13",
+  "fms": {
+    "code": "T-07",
+    "name": "V2"
+  },
+  "stage": {
+    "code": "T-07-S13",
+    "name": "Metal Detector Challenge Test (CCP2)",
+    "what": "Metal Detector Challenge Test (CCP2)",
+    "how": "Use test cards: Fe 1.2mm (M01/M03) / Fe 2.0mm (M02), Nfe 1.5mm/2.5mm, SS 1.8mm/3.0mm — per machine. Pass/Fail recorded. If fail: STOP LINE, investigate, re-verify. Metal Detector Verification Format DFPL/QAC/SOP-04/FRM/01 filled. Metal Detector Verification DFPL/QAC/SOP-04/FRM/01 3 machines. Fe/Nfe/SS test cards. Startup+2hr+shutdown.",
+    "who": "Lucky / Ashish Patidar",
+    "when": "Startup + Every 2 hours + Shutdown"
+  },
+  "fields": [
+    {
+      "name": "FMS Instance ID",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Stage Code",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Responsible Person",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Submission Timestamp",
+      "type": "datetime",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Planned Date",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "Planned Time",
+      "type": "time",
+      "required": true
+    },
+    {
+      "name": "Step Result",
+      "type": "dropdown",
+      "required": true,
+      "options": [
+        "DONE",
+        "NOT DONE",
+        "HOLD",
+        "EXCEPTION"
+      ]
+    },
+    {
+      "name": "Actual Completion Timestamp",
+      "type": "datetime",
+      "required": false
+    },
+    {
+      "name": "Remarks",
+      "type": "long_text",
+      "required": false
+    },
+    {
+      "name": "Evidence / Photos",
+      "type": "file",
+      "required": false
+    }
+  ],
+  "checklist": [
+    "Acknowledge step: Metal Detector Challenge Test (CCP2)",
+    "Required information recorded",
+    "Required evidence attached",
+    "Exceptions/deviations recorded if applicable"
+  ],
+  "evidence": [
+    "Required source/process evidence",
+    "Photos/documents where applicable"
+  ],
+  "pc_actions": [
+    "Review submission",
+    "Mark DONE",
+    "Return for correction",
+    "Place HOLD",
+    "Create exception",
+    "Add comment"
+  ],
+  "notes": [
+    "Generated from the Tata/Palda process-flow documentation. Verify final Google Form question wording with process owner before production."
+  ]
+}

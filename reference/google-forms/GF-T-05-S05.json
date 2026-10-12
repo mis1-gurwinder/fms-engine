@@ -1,0 +1,113 @@
+{
+  "version": "v9",
+  "engine": "FMS Engine",
+  "integration": "Google Forms",
+  "source_of_truth": "PostgreSQL",
+  "source_document": "DFW-TAT-PF-T05_PostFum_QC.html",
+  "submission_does_not_complete_stage": true,
+  "pc_review_required": true,
+  "next_stage_activation": "Only after PC marks this step DONE and configured completion conditions pass",
+  "audit_fields": [
+    "form_sent_at",
+    "form_submitted_at",
+    "pc_reviewed_at",
+    "actual_completed_at",
+    "delay_minutes"
+  ],
+  "form_id": "GF-T-05-S05",
+  "fms": {
+    "code": "T-05",
+    "name": "| DFPL Palda"
+  },
+  "stage": {
+    "code": "T-05-S05",
+    "name": "Sort Remark Confirmed / Updated",
+    "what": "Sort Remark Confirmed / Updated",
+    "how": "Review original sort remark from inward QC. Update if post-fum condition has changed. Compulsory sort: Kabuli Chana, Kala Chana, Rajmah, Peanut. Makhana + others: QC decision. Sort remark recorded on lot tag. Sort remark on lot tag: SORT REQUIRED / NO SORT REQUIRED + material + lot no.",
+    "who": "Lucky / Ashish Patidar (QC)",
+    "when": "At time of post-fum QC clearance"
+  },
+  "fields": [
+    {
+      "name": "FMS Instance ID",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Stage Code",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Responsible Person",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Submission Timestamp",
+      "type": "datetime",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Planned Date",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "Planned Time",
+      "type": "time",
+      "required": true
+    },
+    {
+      "name": "Step Result",
+      "type": "dropdown",
+      "required": true,
+      "options": [
+        "DONE",
+        "NOT DONE",
+        "HOLD",
+        "EXCEPTION"
+      ]
+    },
+    {
+      "name": "Actual Completion Timestamp",
+      "type": "datetime",
+      "required": false
+    },
+    {
+      "name": "Remarks",
+      "type": "long_text",
+      "required": false
+    },
+    {
+      "name": "Evidence / Photos",
+      "type": "file",
+      "required": false
+    }
+  ],
+  "checklist": [
+    "Acknowledge step: Sort Remark Confirmed / Updated",
+    "Required information recorded",
+    "Required evidence attached",
+    "Exceptions/deviations recorded if applicable"
+  ],
+  "evidence": [
+    "Required source/process evidence",
+    "Photos/documents where applicable"
+  ],
+  "pc_actions": [
+    "Review submission",
+    "Mark DONE",
+    "Return for correction",
+    "Place HOLD",
+    "Create exception",
+    "Add comment"
+  ],
+  "notes": [
+    "Generated from the Tata/Palda process-flow documentation. Verify final Google Form question wording with process owner before production."
+  ]
+}

@@ -1,0 +1,1136 @@
+[
+  {
+    "code": "T-13",
+    "title": "V2 Quarterly Audit",
+    "source_file": "DFW-TAT-PF-T13-V2_Quarterly_Audit.html",
+    "steps": [
+      {
+        "what": "Internal Stock Reconciliation — All SAP Entries Completed",
+        "who": "Bhupendra Rajput + Sunil Kumar Sen",
+        "when": "1 week before audit date",
+        "how": "Pull all pending SAP entries: any missed GRs (RM inward, production, dispatch). Complete ALL SAP entries to ensure system is 100% current. Run internal stock reconciliation: physical vs SAP for all RM, PM, FG lots — all 4 material categories. Resolve all variances internally BEFORE auditor arrives. No surprises. Pre-Audit Reconciliation Sheet (Bhupendra) All SAP entries current. All variances explained. Filed in Drive."
+      },
+      {
+        "what": "Closing Stock Statement Prepared for Auditor",
+        "who": "Bhupendra Rajput",
+        "when": "Day before audit",
+        "how": "Prepare lot-wise closing stock from SAP: RM (each lot, material, qty MT), PM (each lot, material, laminate rolls + outer bags), FG (each SKU, lot, master bags). Print SAP report + cross-check with physical registers. Review with Sunil before sharing with auditor. Closing Stock Statement — Lot-wise (Bhupendra from SAP) RM + PM (laminate + outer bags) + FG. Shared with auditor on arrival. PHASE 2 — AUDIT DAY: THIRD-PARTY + TATA QC PRESENT. NO PRODUCTION OR DISPATCH DURING COUNT."
+      },
+      {
+        "what": "Auditor Briefing — Layout + Stock Statement Shared",
+        "who": "Bhupendra + Sunil brief auditor + Tata representative",
+        "when": "Audit day morning",
+        "how": "Explain plant layout: RM fumigation area, packing area, FG storage. Share closing stock statement. Provide: inward registers, FG outward registers, fumigation records, GMP records. Audit methodology agreed: 3-way count (auditor, Dinero, SAP)."
+      },
+      {
+        "what": "Physical Count — RM, PM, FG (All Lots, All Materials)",
+        "who": "Sanju (RM+PM) + Dharam (FG) with auditor present",
+        "when": "Audit day — full day exercise. No production/dispatch.",
+        "how": "Auditor accompanies stores team. RM: each lot counted bag by bag. PM: laminate rolls counted + outer bags counted separately. FG: each pallet, master bags verified per SKU per lot. Auditor records own count INDEPENDENTLY. Labour deployed for support."
+      },
+      {
+        "what": "Three-Way Count Comparison — Auditor vs Dinero vs SAP",
+        "who": "Third-party auditor + Bhupendra + Tata representative",
+        "when": "After physical count complete — same day",
+        "how": "Compare: Auditor count vs SAP stock vs Dinero internal count — per lot, per material. If discrepancy between Dinero and auditor: recount immediately. Finalise agreed physical qty for each lot. Any lot with discrepancy must be resolved before loss calculation begins."
+      },
+      {
+        "what": "Loss Calculation — Separate for Each of 4 Materials",
+        "who": "Third-party auditor calculates. Bhupendra verifies.",
+        "when": "After physical count finalised",
+        "how": "Loss formula: Loss% = (RM received - FG produced - RM balance - sorting rejects) / RM received x 100. Calculate SEPARATELY for: (1) Pulses — limit 0.80%, (2) Makhana — limit 1%, (3) Laminate — limit 1%, (4) Outer Bag — limit 0%. If physical > SAP on any material: credit to SAP. LOSS LIMITS (Corrected): 1. Pulses: 0.80% (was 1%) 2. Makhana: 1% (was 1.5%) 3. Laminate: 1% (new) 4. Outer Bag: 0% (new) Each calculated separately. Loss Within Limits? All 4 materials checked separately ALL WITHIN ANY EXCESS"
+      },
+      {
+        "what": "Excess Loss → Debit Note Triggered (T-14)",
+        "who": "Third-party auditor calculates. Tata raises debit note.",
+        "when": "Same day — after loss calculation confirmed",
+        "how": "Debit Note = Excess loss qty x material rate (Tata contract price). Separate debit note per material where excess found. Bhupendra receives and immediately informs MD. Full resolution via T-14."
+      },
+      {
+        "what": "Quarterly Audit Report Signed by All 4 Parties",
+        "who": "Third-party auditor + Tata representative + Bhupendra + Sunil",
+        "when": "End of audit day",
+        "how": "Audit report: physical count per lot (all materials), SAP stock, variance, loss % per material, debit/credit per material. ALL FOUR parties sign. Original with Tata. Dinero copy: Bhupendra files in Google Drive (01-Plants/Indore-DFPL-Tata/Audits/QYYYYQX). Yash Sharma receives copy for accounting. Quarterly Audit Report (All 4 Parties Signed) Filed: Google Drive / Audits. Yash gets copy. T-14 triggered if debit."
+      },
+      {
+        "what": "SAP Credits Updated + Yash Informed",
+        "who": "Bhupendra (SAP). Yash Sharma (accounts).",
+        "when": "Within 2 working days of audit",
+        "how": "Credit case (physical > SAP): Bhupendra creates SAP credit GR for each material with excess. Debit case: Yash provisions debit note amount in Tally. Monthly invoice (T-16) adjusted accordingly. Yash files debit/credit note in accounts. SAP Credit GR + Tally Provision (Yash) Credit = SAP adjustment. Debit = T-14 + T-16 adjustment. QUARTERLY AUDIT COMPLETE — LOSS/CREDIT FINALISED — DEBIT NOTE IF ANY VIA T-14 — YASH INFORMED"
+      }
+    ]
+  },
+  {
+    "code": "T-16",
+    "title": "V2 Monthly Invoice",
+    "source_file": "DFW-TAT-PF-T16-V2_Monthly_Invoice.html",
+    "steps": [
+      {
+        "what": "Hand-Sort Invoice Raised IMMEDIATELY on Deviation",
+        "who": "Bhupendra (data) + Yash Sharma (invoice)",
+        "when": "When QA marks deviation on lot requiring hand-sorting — same day",
+        "how": "When Lucky / Ashish marks hand-sort deviation on a lot (T-05 or T-06): Bhupendra calculates lot qty (MT) x Rs.750/ton. Notifies Yash immediately. Yash raises separate invoice on same day or next working day. Do NOT accumulate to month-end. Applies to: Kabuli Chana, Kala Chana, Rajmah, Peanut. Also applies to Makhana hand-sort at Rs.4/kg. Hand-Sort Immediate Invoice (Yash) Pulses: Rs.750/ton. Makhana: Rs.4/kg. Same day as deviation. NOT month-end. MONTHLY CYCLE: BILLING DATA COMPILED BY 28th — ALL 4 INVOICES RAISED BY 2nd-3rd OF FOLLOWING MONTH ALL RATES CONFIRMED:  Conversion/ton: 100g = Rs.9,530 200g = Rs.7,030 500g = Rs.1,846 1kg = Rs.1,351  Hand-sort/ton: Rs.750 (Kabuli, Kala Chana, Rajmah, Peanut)  Re-fumigation/ton: Rs.53 Courier: Actuals Job work packing: Rs.4/kg"
+      },
+      {
+        "what": "Monthly Billing Data Compiled",
+        "who": "Yash Sharma",
+        "when": "As per actuals",
+        "how": "From courier billing application. Match actual receipts. File copies. Invoice 4: Hand-Sorting Already raised IMMEDIATELY on deviation. DO NOT re-raise at month-end. Check register to confirm all raised."
+      },
+      {
+        "what": "All Monthly Invoices Raised in Tally + Sent to Tata",
+        "who": "Yash Sharma",
+        "when": "2nd-3rd of following month — non-negotiable deadline",
+        "how": "Raise all applicable invoices in Tally with GST 18% (job work services, SAC code). Each invoice: DFPL GSTIN, Tata GSTIN, service description, qty (tons/kg), rate, amount. Email all invoices to Tata commercial team with SAP production report attached for verification. Subject: 'Dinero Tata Job Work Invoice — [Month Year]'. Job Work Invoices in Tally — GST 18% SAC code for job work. SAP report attached."
+      },
+      {
+        "what": "Tata Reconciles Invoices with SAP Production Data",
+        "who": "Tata commercial / finance",
+        "when": "Within 5 working days of invoice receipt",
+        "how": "Tata verifies qty packed in Dinero invoice vs Tata SAP production records. Discrepancy: Tata raises query to Bhupendra. Bhupendra resolves with SAP screenshots + Operation Log records. Tata Reconciliation OK? Within 5 working days APPROVED QUERY Bhupendra + Yash resolve within 2 days. Resubmit if needed."
+      },
+      {
+        "what": "Payment Received + Booked by Yash",
+        "who": "Yash Sharma tracks and books",
+        "when": "As per credit terms agreed with Tata",
+        "how": "Tata releases payment via NEFT/RTGS. Yash books receipt in Tally against each invoice. Update monthly collection tracker. Inform Bhupendra + MD. FCF tracker (₹20L/month target) updated. Any overdue beyond credit period: Bhupendra to follow up with Tata commercial. Payment Receipt in Tally (Yash) + Collection Tracker FCF tracker updated. Overdue follow-up by Bhupendra. MONTHLY INVOICING COMPLETE — PAYMENT TRACKED — HAND-SORT ALREADY BILLED — FCF TRACKER UPDATED"
+      }
+    ]
+  },
+  {
+    "code": "T-18",
+    "title": "· Tata Plant",
+    "source_file": "DFW-TAT-PF-T18_Daily_Production_MIS.html",
+    "steps": [
+      {
+        "what": "Production Data — Naveen Reports",
+        "who": "Naveen Chourey",
+        "when": "By 6:00 PM — after packing line stops",
+        "how": "WhatsApp to Bhupendra: (1) SKU packed today + qty (master bags). (2) Lots used. (3) Any line stoppages / reasons. (4) Labour head count today. (5) Any QC holds or rework today."
+      },
+      {
+        "what": "RM + PM Inventory — Sanju Reports",
+        "who": "Sanju Jatav",
+        "when": "By 6:00 PM — EOD count",
+        "how": "WhatsApp to Bhupendra: (1) RM lots in fumigation (lot no. + material + qty + fumigation open date). (2) RM lots cleared and available. (3) RM consumed today. (4) PM balance by SKU. (5) Any new inwards today."
+      },
+      {
+        "what": "FG + Dispatch — Dharam Singh Reports",
+        "who": "Dharam Singh",
+        "when": "By 6:00 PM — EOD count",
+        "how": "WhatsApp to Bhupendra: (1) FG balance by SKU + lot (released only). (2) FG dispatched today — SKU + qty + challan no. (3) Any FG on QC hold. (4) Pallet count in FG area."
+      },
+      {
+        "what": "Daily MIS Report Compiled by Bhupendra",
+        "who": "Bhupendra Rajput",
+        "when": "By 6:45 PM — after all 3 data sources received",
+        "how": "Compile into standard MIS format: Production summary (SKU-wise today + MTD), RM status (lot-wise: in fum / cleared / issued), PM balance, FG balance (SKU-wise), Dispatch today + MTD, Running loss % (updated from T-12 reconciliation). Prepare PDF or Google Sheet report. Daily MIS Report (Google Sheet — Bhupendra) Standard format. Auto-calculates MTD. Filed in 08-MD Dashboard."
+      },
+      {
+        "what": "MIS Report Sent to MD + Yash Sharma",
+        "who": "Bhupendra Rajput",
+        "when": "By 7:00 PM daily — non-negotiable",
+        "how": "Email + WhatsApp to Rahul Arora (MD) + Yash Sharma. Subject: 'Tata Plant Daily MIS — [Date]'. Attach: Google Sheet link or PDF. Highlight: any variances, loss alerts, line stoppages, QC holds. Daily MIS Email (Bhupendra to MD + Yash) Subject: Tata Plant Daily MIS — YYYY-MM-DD"
+      },
+      {
+        "what": "MD Reviews Key Alert Metrics",
+        "who": "Rahul Arora (MD)",
+        "when": "By 8:00 PM — same evening",
+        "how": "MD reviews: (1) Running loss % vs limits. (2) Production vs PR target. (3) FG balance — any dispatch risk? (4) Any QC holds. (5) Line stoppages. If any metric is RED: call Bhupendra immediately. If all GREEN: WhatsApp acknowledgement."
+      },
+      {
+        "what": "Daily MIS Archived + MTD Auto-Updated",
+        "who": "Google Sheet auto-updates. Bhupendra confirms.",
+        "when": "Daily — auto on file save",
+        "how": "Each day's data appended to monthly sheet. MTD totals auto-calculate. At month end: monthly MIS = sum of all daily MIS. Feeds T-17 cost analysis, Financial Summary Sheet (T-16 billing check), and MD Dashboard. Monthly Archive (Google Drive: 08-MD Dashboard) MTD cumulative. Month-end = monthly MIS report. DAILY MIS COMPLETE — MD INFORMED — MONTHLY ROLLUP UPDATED — PLANT PERFORMANCE VISIBLE"
+      }
+    ]
+  },
+  {
+    "code": "T-11",
+    "title": "V2 FG Dispatch",
+    "source_file": "DFW-TAT-PF-T11-V2_FG_Dispatch.html",
+    "steps": [
+      {
+        "what": "Tata Truck Docks — Security Informs Dharam Singh",
+        "who": "Security Guard + Dharam Singh (FG/Dispatch Supervisor)",
+        "when": "On truck arrival at confirmed slot",
+        "how": "Security informs Dharam Singh when vehicle docks. Security: 4 photos of vehicle (front, back, driver side, passenger side) saved in WhatsApp group + email. Gate entry log: vehicle no., driver name, arrival time. Dharam Singh proceeds to dock. Security Photos (4 angles) + Gate Entry Log Vehicle no. + driver contact + arrival time. WhatsApp + email saved. PGI — PRE-DISPATCH INSPECTION (NOT FG AUDIT — THIS IS WHERE PGI HAPPENS)"
+      },
+      {
+        "what": "Vehicle Loading Check + QA Permission (PGI)",
+        "who": "Dharam Singh (vehicle check). Lucky / Ashish (QA permission).",
+        "when": "Before any loading begins",
+        "how": "Dharam Singh: vehicle check per format DFPL/STR/SOP-2/FRM/01 (same 10-point checklist as inward). Confirm: clean, dry, no odour, covered. Then request QA permission to load. Lucky / Ashish: verify FG is released (T-09 confirmed), batch matches dispatch plan, FG Release Note present. QA authorises loading. Vehicle Loading Check DFPL/STR/SOP-2/FRM/01 10-point check by Dharam. QA authorisation before loading starts. Vehicle Check + QA Permission OK? Who: Dharam + Lucky/Ashish  When: Pre-loading YES — Load NO"
+      },
+      {
+        "what": "Loading Stopped — Resolve Issue First",
+        "who": "Bhupendra + Tata Ops",
+        "when": "Immediately",
+        "how": "Resolve vehicle issue (clean, replace truck) or FG issue (wrong lot, unreleased). Re-check before loading resumes."
+      },
+      {
+        "what": "Loading Per Dispatch Slip — Dharam Supervises",
+        "who": "Labour loads. Dharam Singh supervises + counts.",
+        "when": "After QA permission granted",
+        "how": "Dharam Singh issues dispatch slip to loading team: SKU-wise master bag count per lot. Labour loads pallets per slip. Dharam Singh tracks bags per SKU as loaded — ensures correct SKU placement. Multi-SKU vehicles: use physical dividers/railings to prevent bag falls and SKU mixing. Railing system to be installed to prevent bag collapse + SKU interchange. Currently a known risk. KEY PROCESS — DRIVER COUNTS ROW-WISE (not just total): e.g. Row 1=45 bags, Row 2=42 bags, Row 3=43 bags"
+      },
+      {
+        "what": "Driver Counts Bags Row-by-Row + Signs Tally",
+        "who": "Driver (Tata truck). Dharam Singh verifies count.",
+        "when": "After all loading is complete — before truck seals",
+        "how": "Driver sits near truck and counts each row of bags as loaded. Example: Row 1 = 45, Row 2 = 42, Row 3 = 43. Row-by-row tally recorded on dispatch slip. THEN: Dharam Singh (Footer) signs the final tally + Driver signs. Both signatures mandatory. Total count reconciled. Dispatch Slip — Row-Wise Count (Dharam + Driver sign) Footer sign + Driver sign on final tally. Both mandatory."
+      },
+      {
+        "what": "SKU-Level Verification (Beyond Total Count)",
+        "who": "Dharam Singh verifies. Lucky / Ashish spot-checks.",
+        "when": "After driver count — before truck seals",
+        "how": "RISK: Multiple SKUs in one vehicle (up to 22 SKUs). Total count may match but SKUs can get interchanged when 10kg bags collapse/stick together. Dharam Singh: verify each SKU qty matches dispatch slip separately. Lucky/Ashish: spot-check visible SKU labels. If mismatch found: correct before sealing truck. SKU mix-up = wrong product at Tata DC = complaint. Must verify per SKU, not just total bags."
+      },
+      {
+        "what": "Delivery Challan + E-Way Bill Generated",
+        "who": "Bhupendra Rajput generates. Dharam Singh hands to driver.",
+        "when": "After loading count verified + SKU check passed",
+        "how": "Delivery Challan: material details, qty, lot no., from/to address, vehicle no., challan no. E-way bill: generated on GST portal (if value threshold crossed). Both given to driver before truck leaves. Copies: driver + Dinero file (Drive) + Tata copy. Bhupendra notes challan no. for SAP GI. Delivery Challan (Dinero) + E-way Bill (GST Portal) Challan no. linked to SAP GI. Copy in Google Drive."
+      },
+      {
+        "what": "Truck Sealed + Departs Gate",
+        "who": "Dharam Singh + Security Guard",
+        "when": "After challan + e-way bill handed to driver",
+        "how": "Truck sealed. Security gate exit log: vehicle no., time out, challan no. Driver contact number saved. Dharam Singh confirms departure. Gate exit log signed by Security. Gate Exit Log (Security) Vehicle no. + time out + challan no."
+      },
+      {
+        "what": "SAP Dispatch Goods Issue (GI) — Same Day Mandatory",
+        "who": "Bhupendra Rajput",
+        "when": "Same day as dispatch — before end of working day",
+        "how": "Login Tata SAP (DFPL plant code). Create Goods Issue (GI) against dispatch plan: SKU/material code, lot no., qty dispatched (master bags x bag weight), vehicle no., delivery challan no. FG stock reduces in SAP immediately. Screenshot filed in Google Drive. Match SAP GI qty vs physical dispatch count. SAP Goods Issue (Tata System) — same day FG stock deducted. Screenshot + challan no. filed in Drive."
+      },
+      {
+        "what": "FG Outward Register Updated + Stock Reconciled",
+        "who": "Dharam Singh (register). Bhupendra (SAP reconcile).",
+        "when": "Same day as dispatch",
+        "how": "Dharam Singh: FG Outward Register entry — Date, SKU, Lot, Master Bags dispatched, Vehicle no., Challan no. Update FG Stock Register DFPL/FGD/SOP-1/FRM/02 (dispatch stock column). Bhupendra: confirm physical FG balance = SAP FG post-GI. Any variance: flag immediately. Feeds T-12 + T-18 daily MIS. FG Outward Register + FG Stock Register DFPL/FGD/SOP-1/FRM/02 Dispatch qty logged. SAP reconciled. Feeds T-12 + T-18. DISPATCH COMPLETE — SAP GI DONE — OUTWARD REGISTER UPDATED — BILLING CYCLE TRIGGERED (T-16)"
+      }
+    ]
+  },
+  {
+    "code": "T-01",
+    "title": "V2 RM Inward | DFPL Palda Tata Plant",
+    "source_file": "DFW-TAT-PF-T01-V2_RM_Inward.html",
+    "steps": [
+      {
+        "what": "PR Received + RM & PM Stock Status Sent to Tata",
+        "who": "Bhupendra Rajput",
+        "when": "1 day before each PR (every 7 days — 4 PRs/month)",
+        "how": "Kirti (Tata Ops) sends weekly PR. Bhupendra emails RM + PM stock status to Tata planning 1 day before PR."
+      },
+      {
+        "what": "Truck Arrives at Gate",
+        "who": "Sanju Jatav (primary) / Naveen if Sanju absent",
+        "when": "As per dispatch plan / driver call",
+        "how": "Driver presents: Delivery Challan + Invoice + Tata PO copy. Driver details noted."
+      },
+      {
+        "what": "Security Guard Photographs Vehicle",
+        "who": "Security Guard (at gate)",
+        "when": "Immediately on truck arrival — before inspection",
+        "how": "4 photos: Front, Back, Driver side, Passenger side. Rejection: specific issue photos. Saved in WhatsApp group + email. &#128247; Vehicle Photos (4 angles) Saved: WhatsApp group + email. Dispute protection."
+      },
+      {
+        "what": "10-Point Vehicle Inspection Checklist",
+        "who": "Sanju Jatav fills DFPL/STR/SOP-2/FRM/01",
+        "when": "After security photos — before unloading",
+        "how": "Check: body condition, cleanliness, infestation, previous cargo, floor, tarpaulin, driver hygiene, doors, documents, food safety. For PM: check oil contamination on laminates. &#128203; Vehicle Inspection Checklist — DFPL/STR/SOP-2/FRM/01 Signed: Sanju + Security + Driver + QC Verification Vehicle Passes Inspection? Who: Sanju  When: Post checklist YES NO"
+      },
+      {
+        "what": "Raise Vehicle Issue",
+        "who": "Sanju → Tata QC → Sagar (final)",
+        "when": "Immediately",
+        "how": "Sagar classifies critical/normal. If rejected: reload, return truck. Lot No. still assigned."
+      },
+      {
+        "what": "Lot Number Assigned",
+        "who": "Lucky / Ashish Patidar (QC)",
+        "when": "Before sampling begins",
+        "how": "Sequential lot number assigned to ALL trucks — accepted AND rejected. Enables full traceability of rejections. &#128196; Lot Number — Assigned to ALL incoming Even rejected vehicles get a lot number for traceability STAGE 1 SAMPLING — WHILE RM IS IN TRUCK"
+      },
+      {
+        "what": "Stage 1 — Composite Sample from Truck",
+        "who": "Tata QC + Lucky / Ashish Patidar (jointly)",
+        "when": "Before full unloading begins",
+        "how": "Pull sample from: ALL bags of last stack in truck + some bags from top layer. Composite sample formed. Test: moisture + physical parameters + sensory. This is the primary acceptance/rejection test. &#128203; RM Analysis TCPL/F-PL/OM/FM-15 (Pulses) RM Analysis TCPL/DFN/3P/1.5 (Makhana) + Sensory FM-20 Stage 1 QC Decision? Who: Tata QC Supervisor  When: Post lab results ACCEPT REJECT DEVIATE TRUCK REJECTED Reload. Return vehicle. Lot logged with reason."
+      },
+      {
+        "what": "Deviation Approval",
+        "who": "Sagar (Tata QC) emails Rohit (Tata Supervisor)",
+        "when": "Same day — before unloading decision",
+        "how": "Sagar is final authority for Dinero. If Rohit approves: unload with deviation noted on QC report. Makhana: Weevil = deviation possible  |  Larva = STRICT REJECT, no deviation"
+      },
+      {
+        "what": "Unloading — Per-Bag Numbering + Punching",
+        "who": "Labour supervised by Sanju Jatav. Guards assist.",
+        "when": "After Stage 1 acceptance / deviation approval",
+        "how": "Per-bag numbering by guards during unloading (for mid-lot complaint traceability). Bags punched — supports fumigation gas penetration. Bags counted simultaneously. NEW MANDATORY STEP — 50-BAG WEIGHT CHECK DURING UNLOADING"
+      },
+      {
+        "what": "50-Bag Weight Check During Unloading",
+        "who": "Sanju Jatav records. Lucky / Ashish verifies.",
+        "when": "During unloading — simultaneously as bags come off truck",
+        "how": "Min 10% of bags (~50 bags/truck) weighed on shoulder-height scale at unloading dock. Labour places bag on scale. Sanju records gross weight for each. Calculate: Avg Gross Wt, Avg Empty Bag Wt, Avg Net Wt, Variation vs Invoice (Kanta Parchi). &#128203; RM Weight Check Report — DFPL/STR/SOP-2/FRM/03 Signed: RM In-charge + QA Checked By + QA Verified By Weight Deviation vs Kanta Parchi? Who: Sanju + Lucky  When: Post weight check WITHIN TOLERANCE DEVIATION"
+      },
+      {
+        "what": "Weight Deviation Reported",
+        "who": "Bhupendra → flags to Tata for SAP adjustment",
+        "when": "Same day",
+        "how": "Note deviation on Weight Check Report. Bhupendra reports to Tata for SAP GR correction."
+      },
+      {
+        "what": "Stacking in RM Fumigation Area",
+        "who": "Labour supervised by Sanju Jatav",
+        "when": "Same day as unloading",
+        "how": "Stack on pallets in RM fumigation section. Avoid excessive height. Pulses: 1 vehicle = 1 stack = 1 lot. Makhana: ~2MT per stack. Lot number tag attached to each stack. STAGE 2 SAMPLING — AFTER STACKING (PULSES ONLY — NOT MAKHANA)"
+      },
+      {
+        "what": "Stage 2 — Post-Stacking Sample (Pulses Only)",
+        "who": "Tata QC + Lucky / Ashish (jointly)",
+        "when": "After stacking is complete — same day or next day",
+        "how": "Sample from single side of stack in M, W, or Z pattern. Extends sample size for verification. No report generated unless deviation found. Rejection possible based on Stage 2 result. Stage 2 Result (Pulses only)? Who: Tata QC + Lucky/Ashish  When: Post test PASS ✓ FAIL LOT REJECTED Deviation report raised. Lot held."
+      },
+      {
+        "what": "Inward Register Entry",
+        "who": "Sanju Jatav (enters) + Tata Ops Supervisor (countersigns)",
+        "when": "Same day — within 1 hour of stacking",
+        "how": "Record: S.No, Date, Vendor, Product, Lot No., Bags, Size, Total Kg, Invoice No., Fumigation Close Date (scheduled), Kanta Parchi No., RM sign. All lots — accept or reject — recorded. &#128218; Inward Register (Dinero Physical Register) Tracks: Lot No. + Fumigation open/close dates + Kanta Parchi No."
+      },
+      {
+        "what": "SAP Goods Receipt Entry — Tata System",
+        "who": "Bhupendra Rajput",
+        "when": "Same day — before end of working day",
+        "how": "Login Tata SAP (DFPL plant code). GR vs PO. NEW PROCESS: use Weight Check Report for actual net weight, NOT weighbridge gross weight. Note GR no. in inward register. Screenshot filed in Drive. &#128203; SAP GR (Tata System) — based on Dinero Weight Check NOT weighbridge gross — use verified net weight from FRM/03"
+      },
+      {
+        "what": "NBHC Informed — Fumigation Scheduled",
+        "who": "Bhupendra Rajput contacts NBHC",
+        "when": "Same day as SAP GR — within 2 hours of stacking",
+        "how": "Phone + WhatsApp. Provide: lot no., material, qty in MT/cubic meters, GR no., stack location. NBHC visits daily — schedule next visit. Makhana: provide cubic meter measurement of stack. Makhana: provide stack cubic meters. Pulses: MT. NBHC visits daily once."
+      }
+    ]
+  },
+  {
+    "code": "T-12",
+    "title": "V2 Daily Inventory",
+    "source_file": "DFW-TAT-PF-T12-V2_Daily_Inventory.html",
+    "steps": [
+      {
+        "what": "RM + PM Physical Count — All Lots",
+        "who": "Sanju Jatav (RM Supervisor)",
+        "when": "EOD — after last inward / production activity",
+        "how": "Count ALL RM lots separately: lot no., material, physical bags, bag weight, total MT. Status: in fumigation / cleared / issued today. Count ALL PM by lot: bags/rolls per SKU. Compare vs inward register. FIFO markings verified. Send WhatsApp + email to Bhupendra by 6:00 PM. RM + PM Daily Count Sheet (Sanju) Lot-wise: RM in fumigation / cleared / issued + PM balance. By 6 PM."
+      },
+      {
+        "what": "FG Physical Count — All SKUs + Lots",
+        "who": "Dharam Singh (FG Supervisor)",
+        "when": "EOD — after last production / dispatch",
+        "how": "Count FG by SKU and lot: released FG only (QC hold counted separately). Master bags per lot. Compare vs FG Stock Register DFPL/FGD/SOP-1/FRM/02. Note: produced today, dispatched today, closing balance. Send WhatsApp to Bhupendra by 6:00 PM. FG Daily Count Sheet (Dharam Singh) By SKU + lot + status. Opening + produced + dispatched + closing. EOD STEP 2 — SAP RECONCILIATION BY BHUPENDRA (AFTER RECEIVING ALL 3 COUNTS)"
+      },
+      {
+        "what": "SAP vs Physical Stock Reconciliation — All Materials",
+        "who": "Bhupendra + Sunil",
+        "when": "Same EOD",
+        "how": "Identify cause: missed entry, counting error, transit loss. Correct if clerical. If physical loss: document for quarterly audit. EOD STEP 3 — RUNNING LOSS % TRACKER UPDATED (CRITICAL — FEEDS QUARTERLY AUDIT READINESS)"
+      },
+      {
+        "what": "Running Loss % Tracker Updated — 4 Materials",
+        "who": "Bhupendra Rajput",
+        "when": "After reconciliation — daily",
+        "how": "Calculate cumulative loss since last quarterly audit for each material: Formula = (RM received - FG produced - RM balance - sorting rejects) / RM received x 100. Update tracker: Pulses (limit 0.80%), Makhana (limit 1%), Laminate (limit 1%), Outer bags (limit 0%). YELLOW ALERT to MD if Pulses >0.70% or Makhana >0.80%. RED ALERT if Pulses >0.90% or Makhana >0.95%. LOSS LIMITS (CORRECTED): Pulses: 0.80% (was 1%) Makhana: 1% (was 1.5%) Laminate: 1% Outer Bag: 0%  Alerts: >0.7%=Yellow | >0.9%=Red EOD STEP 4 — DAILY MIS REPORT TO MD + YASH BY 7:00 PM"
+      },
+      {
+        "what": "Daily Inventory MIS Report — Sent to MD + Yash",
+        "who": "Bhupendra Rajput",
+        "when": "By 7:00 PM daily — non-negotiable",
+        "how": "Report covers: RM received today, RM in fumigation (lot-wise), RM cleared + available, RM consumed in production, PM received + consumed, FG produced today (SKU-wise), FG dispatched today, FG closing balance (SKU-wise), Running loss % all 4 materials vs limits. Highlight any alerts in RED. Email + WhatsApp to MD + Yash. Daily MIS Report (email + WhatsApp to Rahul sir + Yash) Feeds T-18 (Daily Production + Inventory MIS Report) MONTHLY: Tata GMP audit (their team visits). Dinero also does own monthly GMP audit. Both separate from quarterly physical audit (T-13). DAILY INVENTORY RECONCILED — LOSS % TRACKED — MD INFORMED — QUARTERLY AUDIT READINESS MAINTAINED"
+      }
+    ]
+  },
+  {
+    "code": "T-03",
+    "title": "Fumigation | DFPL Palda Tata Plant",
+    "source_file": "DFW-TAT-PF-T03_Fumigation.html",
+    "steps": [
+      {
+        "what": "ALP Dosage Calculated per Lot",
+        "who": "Lucky / Ashish Patidar (QC) + NBHC Executive",
+        "when": "Before fumigation begins — on NBHC arrival",
+        "how": "Pulses: 9g ALP per MT of lot weight. Makhana: 6.75g-12g ALP per cubic meter (based on weevil intensity). Std Makhana lot = 2000kg = 38 cubic meters. NBHC calculates total tablets required. Pulses: 9g/MT (weight-based). Makhana: 6.75-12g/m3 (volume-based). Min 256.5g / Max 456g per std Makhana lot."
+      },
+      {
+        "what": "Pre-Fumigation Stack Check",
+        "who": "Lucky / Ashish + NBHC jointly",
+        "when": "Before tarpaulin covering",
+        "how": "Verify: stack height not excessive, bags punched (gas penetration), lot tag visible, area sealed from other lots. Note any issues before proceeding."
+      },
+      {
+        "what": "Cover Stack + Seal with Sand Bags",
+        "who": "NBHC Executive executes. Lucky / Ashish verify.",
+        "when": "On fumigation day",
+        "how": "NBHC covers stack with tarpaulin. Sand bags placed all around perimeter for gas sealing. Leak test performed. NBHC checks tarpaulin integrity."
+      },
+      {
+        "what": "ALP Tablets Placed — Fumigation Started",
+        "who": "NBHC Executive places ALP tablets",
+        "when": "After stack covered and sealed",
+        "how": "ALP tablets placed inside tarpaulin per calculated dosage. ALP efficiency test after 1 hour. Bio-assay samples kept (min 2 per lot). NBHC sticker placed on stack. Photos taken and sent to Tata QC + Dinero QC. Fumigation Record TCPL/DFN/3P/4.5 (18 items) Covers: ALP qty, leak test, bio-assay, temp, tarpaulin, NBHC sign, QC sign"
+      },
+      {
+        "what": "Fumigation Record + Inward Register Updated",
+        "who": "NBHC fills TCPL/DFN/3P/4.5. Lucky/Ashish fill Dinero log.",
+        "when": "Same day as fumigation start",
+        "how": "TCPL/DFN/3P/4.5: all 18 checklist items filled. Inward register: fumigation close date (scheduled open date = start + 7 days) logged by Sanju. Both Tata + Dinero records maintained. Inward Register — Fumigation Close Date Logged Sanju updates: Lot No. + Fumigation start date + Scheduled open date 7-DAY FUMIGATION MONITORING — PHOSPHINE READINGS ON DAY 1, DAY 3, DAY 7"
+      },
+      {
+        "what": "Phosphine Level Monitoring — Day 1 / Day 3 / Day 7",
+        "who": "NBHC reads PPM. Tata QC + Lucky / Ashish record jointly.",
+        "when": "Day 1 (same day), Day 3, Day 7 after fumigation start",
+        "how": "NBHC measures phosphine PPM inside tarpaulin at each stage. Record in TCPL/F-PL/DF/FM-02. Check vs threshold value. If Day 7 reading within threshold: fumigation effective. Bio-assay result checked. Phosphine Monitoring Record TCPL/F-PL/DF/FM-02 Day 1, Day 3, Day 7 PPM readings + threshold check Day 7: Fumigation Effective? Who: Tata QC + Lucky/Ashish  When: Day 7 YES — Open NO"
+      },
+      {
+        "what": "Extend Fumigation",
+        "who": "NBHC + Tata QC decision",
+        "when": "Day 7 if not effective",
+        "how": "NBHC continues fumigation. Re-check phosphine levels. Extend until threshold achieved."
+      },
+      {
+        "what": "Fumigation Opened — Tarpaulin Removed",
+        "who": "NBHC removes tarpaulin. Lucky / Ashish verify safe phosphine level.",
+        "when": "Day 7 (or when effective) — scheduled open date",
+        "how": "Phosphine confirmed at safe level before opening. Tarpaulin removed by NBHC. Opening date and time logged. Inward register open date updated by Sanju. Inward Register — Fumigation Open Date Updated Sanju updates: Actual open date + Slip No. Will lot be packed within 21 days of opening? Who: Bhupendra checks production plan YES NO / RISK"
+      },
+      {
+        "what": "Re-Fumigation Triggered",
+        "who": "Bhupendra informs NBHC. Lucky / Ashish document.",
+        "when": "Before 21 days from opening lapse",
+        "how": "Re-fumigation with same ALP process. Max 3 re-fumigations per lot for any RM. Counter tracked in inward register. After 3rd re-fumigation — escalate to Tata for decision on lot. Max 3 re-fumigations. After 3rd — escalate to Tata."
+      },
+      {
+        "what": "Lot Cleared — Ready for Post-Fumigation QC",
+        "who": "Lucky / Ashish issue clearance. Bhupendra updates plan.",
+        "when": "After fumigation opening + safe phosphine confirmed",
+        "how": "Lot status updated to 'Post-Fum QC Pending'. Bhupendra schedules T-05 (Post-Fumigation QC). Production plan aligned to weekly PR from Kirti. LOT CLEARED — PROCEED TO T-05 (POST-FUMIGATION QC)"
+      }
+    ]
+  },
+  {
+    "code": "T-15",
+    "title": "· Tata Plant",
+    "source_file": "DFW-TAT-PF-T15_SAP_Daily_Entries.html",
+    "steps": [
+      {
+        "what": "All Day's Documents Collected by Bhupendra",
+        "who": "Bhupendra collects from Sanju, Naveen, Dharam Singh",
+        "when": "EOD — before SAP entries start",
+        "how": "Collect: (1) Inward register page for today's receipts (Sanju). (2) Weight check reports for today's inwards (Sanju). (3) Production record — bags dumped + master bags packed (Naveen). (4) FG dispatch challan + loading count (Dharam Singh). Verify completeness before starting SAP. SAP ENTRY SEQUENCE — MUST FOLLOW THIS ORDER EVERY DAY"
+      },
+      {
+        "what": "SAP Entry 1 — RM Inward Goods Receipt (if truck received today)",
+        "who": "Bhupendra Rajput",
+        "when": "EOD — first SAP entry of the day",
+        "how": "Login Tata SAP (DFPL plant code). GR against RM PO: material code, lot no., net weight (from weight check report — NOT weighbridge gross), vehicle no., inward register ref. GR no. noted in inward register. SAP RM Inward GR — material code + lot + verified net wt NOT weighbridge gross. Use weight check report FRM/03."
+      },
+      {
+        "what": "SAP Entry 2 — PM Inward GR (if PM truck received today)",
+        "who": "Bhupendra Rajput",
+        "when": "Same EOD — after RM GR",
+        "how": "GR against PM PO: PM material code, lot no., qty received (bags/rolls), supplier details. Only if PM was received today. SAP PM Inward GR PM material code + lot + qty"
+      },
+      {
+        "what": "SAP Entry 3 — Production GR (Goods Receipt for FG Produced)",
+        "who": "Bhupendra Rajput",
+        "when": "EOD — after inward GRs",
+        "how": "Record FG produced today: material code (SKU), lot no., qty (master bags x bag weight = total kg). Links: RM consumed (bags dumped x 50kg) vs FG produced. Calculate production loss for the day. GR no. noted in production register. SAP Production GR — FG by SKU + lot + qty RM input vs FG output. Line loss calculated and flagged if >limit."
+      },
+      {
+        "what": "SAP Entry 4 — Dispatch Goods Issue (GI) (if dispatch happened today)",
+        "who": "Bhupendra Rajput",
+        "when": "EOD — last SAP entry",
+        "how": "Create Goods Issue (GI) against dispatch: SKU, lot no., qty dispatched (master bags x bag weight), vehicle no., delivery challan no. FG stock reduces in SAP. Only if FG was dispatched today. SAP Dispatch GI — SKU + lot + qty + challan no. FG deducted from SAP. Screenshot filed in Drive."
+      },
+      {
+        "what": "SAP Stock Report Pulled + Verified vs Physical",
+        "who": "Bhupendra Rajput",
+        "when": "After all entries for the day — cross-check",
+        "how": "Pull end-of-day SAP stock report: RM, PM, FG by lot. Compare with physical counts received from Sanju + Dharam Singh (T-12). Any variance: investigate immediately before closing the day. All entries must balance. SAP Stock = Physical Count? Who: Bhupendra  When: After all entries BALANCED VARIANCE Investigate + correct before closing"
+      },
+      {
+        "what": "SAP Entry Screenshots Filed in Google Drive",
+        "who": "Bhupendra Rajput",
+        "when": "After all entries verified and balanced",
+        "how": "Screenshot all SAP GR/GI entries for the day. Name format: YYYY-MM-DD_T[type]_[material]_[lot]. Save in Google Drive: 01-Plants/Indore-DFPL-Tata/SAP-Daily-Entries/[Month]. Share summary to Yash Sharma. SAP Daily Entry Log (Google Drive) YYYY-MM-DD_GR/GI_SKU_lot. Filed: SAP-Daily-Entries folder. ALL SAP ENTRIES COMPLETE — STOCK BALANCED — DRIVE FILED — FEEDS T-12 + T-18"
+      }
+    ]
+  },
+  {
+    "code": "T-10",
+    "title": "· Tata Plant",
+    "source_file": "DFW-TAT-PF-T10_Dispatch_Planning.html",
+    "steps": [
+      {
+        "what": "Tata Sends Dispatch Instruction to Bhupendra",
+        "who": "Kirti (Tata Ops) sends to Bhupendra Rajput",
+        "when": "As per weekly PR cycle and FG availability at Tata's end",
+        "how": "Dispatch instruction via email / WhatsApp: SKU(s), qty (master bags), lot preference (if any), truck arrival date/time. Tata arranges their own truck. Bhupendra receives and reviews. Dispatch Instruction from Tata (email/WhatsApp) Kirti to Bhupendra: SKU + qty + truck ETA"
+      },
+      {
+        "what": "FG Availability Confirmed vs Dispatch Order",
+        "who": "Dharam Singh (physical check) + Bhupendra (SAP check)",
+        "when": "Same day as dispatch instruction received",
+        "how": "Dharam Singh: physical count of released FG by SKU and lot. Bhupendra: SAP FG stock confirmation. Verify: requested qty available, FG released (not on hold), correct lot (FIFO). Flag shortfall immediately. Requested FG Available + Released? Who: Dharam + Bhupendra  When: Immediate YES NO / SHORT"
+      },
+      {
+        "what": "Shortfall Reported to Tata",
+        "who": "Bhupendra informs Kirti immediately",
+        "when": "Same day",
+        "how": "WhatsApp/email to Kirti: available qty, shortfall qty, expected production completion date. Kirti decides: part dispatch / delay / accept shortage."
+      },
+      {
+        "what": "FG Picking List Prepared",
+        "who": "Dharam Singh prepares picking list",
+        "when": "1 day before truck arrival",
+        "how": "Picking list: SKU, lot no., no. of master bags, pallet no., storage location. FIFO strictly followed within each SKU. Share with Bhupendra for SAP cross-check. Labour briefed for loading preparation. FG Picking List (Dharam Singh — Dinero Internal) SKU + lot + bags + pallet location + FIFO confirmed"
+      },
+      {
+        "what": "Truck Arrival Slot Confirmed + Gate Informed",
+        "who": "Bhupendra confirms with Kirti. Dharam Singh informs security.",
+        "when": "1 day before truck arrival",
+        "how": "Bhupendra: WhatsApp/email to Kirti confirming readiness (qty, lots ready). Dharam Singh: inform security guard of expected truck arrival time + vehicle type. Gate pass prepared. Dispatch Confirmation to Tata (Bhupendra) Qty confirmed + truck slot confirmed + gate informed"
+      },
+      {
+        "what": "FG Staged at Loading Bay — Ready for Truck",
+        "who": "Labour supervised by Dharam Singh",
+        "when": "Morning of dispatch day (before truck arrival)",
+        "how": "Pallets with picked FG moved to loading bay area. Arranged by SKU and lot as per picking list. Count re-verified at staging. Any discrepancy resolved before truck arrives. Staging count must match picking list exactly before truck arrives. No last-minute changes. DISPATCH PLAN LOCKED — FG STAGED — PROCEED TO T-11 (TRUCK ARRIVAL + LOADING + SAP GR)"
+      }
+    ]
+  },
+  {
+    "code": "T-02",
+    "title": "Incoming QC | DFPL Palda Tata Plant",
+    "source_file": "DFW-TAT-PF-T02_Incoming_QC.html",
+    "steps": [
+      {
+        "what": "QC Team Informed — Truck at Gate",
+        "who": "Sanju Jatav informs Lucky / Ashish",
+        "when": "Immediately after vehicle inspection passes (T-01)",
+        "how": "WhatsApp: vehicle no., material, qty, lot no. assigned. QC team arrives at truck. STAGE 1 QC — COMPOSITE SAMPLING WHILE RM IS IN THE TRUCK"
+      },
+      {
+        "what": "Composite Sample Drawn from Truck",
+        "who": "Tata QC + Lucky / Ashish jointly",
+        "when": "Before any unloading begins",
+        "how": "Sample from: ALL bags of last stack in truck + some bags from top layer. Composite mixed to form representative sample. Minimum 5 bags sampled. TESTING — Different parameters for Pulses vs Makhana"
+      },
+      {
+        "what": "Pulses — Parameter Testing",
+        "who": "Tata QC + Lucky / Ashish (jointly)",
+        "when": "Immediately after sampling — same day",
+        "how": "Test per TCPL/F-PL/OM/FM-15: Moisture, Foreign Matter, Count/5/28.3g, Damage%, Broken%, Weevilled%, Whole grain/Splits%, Discolour%, Immature/Red Grains%, Smooth Grain%, Husk Dal%, De-Husk Dal%, Cooking Test."
+      },
+      {
+        "what": "Makhana — Parameter Testing (21 params)",
+        "who": "Tata QC + Lucky / Ashish (jointly)",
+        "when": "Immediately after sampling — same day",
+        "how": "Test per TCPL/DFN/3P/1.5: Moisture NMT 12%, Broken NMT 2%, Discoloured NMT 3%, Infestation NIL, Insect Damage NIL, Immature NIL, Partial Flat NMT 2%, Full Pressed NIL, Foreign Matter NIL, Size uniformity checks."
+      },
+      {
+        "what": "Sensory Analysis (All Pulses)",
+        "who": "Tata QC + Lucky / Ashish",
+        "when": "Same time as physical testing",
+        "how": "Soaking test for all pulses — checks immature grains and softness. TCPL/F-PL/DF/FM 20. Rate: Texture, Colour, Odour, Appearance, Taste (scale 1-5). RM Analysis TCPL/F-PL/OM/FM-15 (Pulses) RM Analysis TCPL/DFN/3P/1.5 (Makhana) + Sensory FM-20 Stage 1 Result? Who: Tata QC  When: Post testing ACCEPT REJECT DEVIATE REJECTED Vehicle returned. Lot logged + reason."
+      },
+      {
+        "what": "Deviation Approval",
+        "who": "Sagar (Tata QC) emails Rohit",
+        "when": "Same day — before unloading decision",
+        "how": "Sagar sends email to Rohit (Tata Supervisor) with deviation details. Rohit approves or rejects. Sagar is final authority for Dinero. Makhana: Weevil = deviation possible | Larva = STRICT REJECT Makhana accepted: QC adds sort remark if hand sorting required before packing."
+      },
+      {
+        "what": "Instruct Unloading",
+        "who": "Tata QC instructs Sanju Jatav",
+        "when": "After accept / deviation approval",
+        "how": "Verbal + written instruction to Sanju: 'Unload lot [no.]'. Unloading begins per T-01 steps (per-bag numbering + punching). STAGE 2 QC — POST-STACKING SAMPLING (PULSES ONLY — NOT MAKHANA)"
+      },
+      {
+        "what": "Stage 2 — Post-Stacking Sample (Pulses Only)",
+        "who": "Tata QC + Lucky / Ashish (jointly)",
+        "when": "After stacking is complete in RM fumigation area",
+        "how": "Sample taken from any single side of the stack in M, W, or Z pattern — covers multiple height levels. Purpose: extend sample size and verify Stage 1 result. Same parameters tested. Stage 2 not done for Makhana. For Makhana: proceed directly to fumigation after Stage 1 accept. Stage 2 Result? (Pulses only) Who: Tata QC + Lucky  When: Post testing PASS REJECT DEVIATION LOT REJECTED Stage 2 reject. Deviation report raised."
+      },
+      {
+        "what": "Stage 2 Deviation — Report Raised",
+        "who": "Lucky / Ashish raise Dinero QC report",
+        "when": "If deviation found in Stage 2",
+        "how": "Report only raised if deviation found (no routine report). Bhupendra informed. Lot held pending decision. Can proceed under deviation with approval."
+      },
+      {
+        "what": "QC Clearance Issued — Lot Cleared for Fumigation",
+        "who": "Lucky / Ashish sign off. Tata QC countersigns.",
+        "when": "After Stage 1 accept + Stage 2 pass (or Makhana Stage 1 only)",
+        "how": "QC report completed and filed. Lot status updated as 'Cleared for Fumigation'. Bhupendra informed to schedule NBHC. QC Clearance Record Filed with: Lot No., material, qty, result, sign. Stored in 05-Quality folder on Drive."
+      },
+      {
+        "what": "Hand Sorting Remark Added to Lot",
+        "who": "Lucky / Ashish Patidar (QC)",
+        "when": "At time of QC clearance",
+        "how": "For Makhana: QC adds remark if hand sorting required before packing. Compulsory for: Kabuli Chana, Kala Chana, Rajmah, Peanut. Optional (QC decision) for: other pulses and Makhana. Compulsory sort: Kabuli Chana, Kala Chana, Rajmah, Peanut. Makhana + others: QC decision. LOT CLEARED — PROCEED TO T-03 (FUMIGATION)"
+      }
+    ]
+  },
+  {
+    "code": "T-06",
+    "title": "· Tata Plant",
+    "source_file": "DFW-TAT-PF-T06_Manual_Sorting.html",
+    "steps": [
+      {
+        "what": "Lot Bags Moved to Sorting Tables",
+        "who": "Sanju Jatav coordinates with labour",
+        "when": "After T-05 clearance + sort remark confirmed",
+        "how": "Bags from RM fumigation area moved to 4 sorting tables. Lot tag + sort remark note accompanies material. Record: bags issued for sorting vs lot qty."
+      },
+      {
+        "what": "Sorting Tables Setup + Workers Deployed",
+        "who": "Naveen Chourey (Packing Supervisor)",
+        "when": "Before sorting begins — morning or shift start",
+        "how": "4 sorting tables. 2 female workers per table = 8 workers. Naveen briefs workers: material type, what to remove (stones, damaged grains, discoloured, insects, foreign matter). Empty collection trays for rejects."
+      },
+      {
+        "what": "Manual Sorting — Bag by Bag",
+        "who": "8 female workers (2 per table). Naveen supervises.",
+        "when": "Continuous — bag opened, sorted, re-collected",
+        "how": "Each bag opened, spread on table. Workers manually pick out: stones, damaged grains, discoloured grains, insect-damaged grains, foreign matter, oversized/undersized grains. Sorted good material collected in separate tray. Rejects collected separately. Loss tracking critical: sorting rejection contributes to 1% pulse loss limit. Weigh reject tray periodically."
+      },
+      {
+        "what": "QC Spot Check on Sorted Material",
+        "who": "Lucky / Ashish Patidar",
+        "when": "Periodically during sorting — every 1-2 hours",
+        "how": "Pick sample from sorted output. Visual check: are rejects being identified correctly? Any insect-damaged grain passing through? Feedback to Naveen immediately if gaps found."
+      },
+      {
+        "what": "Sorting Complete — Input vs Output Weighed",
+        "who": "Naveen Chourey records. Lucky / Ashish verify.",
+        "when": "After all bags of the lot are sorted",
+        "how": "Weigh sorted good material (output). Weigh reject collection (sorting loss). Record: Input qty, Output qty, Sorting loss qty, Sorting loss %. Compare against lot's 1% loss limit. Report to Bhupendra. Sorting Register (Dinero Internal) Input wt + Output wt + Loss % per lot. Filed by Naveen. Sorting Loss Within 1% limit? Who: Bhupendra checks  When: Post sorting YES EXCESS LOSS"
+      },
+      {
+        "what": "Excess Loss — Report to Bhupendra",
+        "who": "Naveen reports to Bhupendra immediately",
+        "when": "If sorting loss exceeds 1% of lot weight",
+        "how": "Bhupendra investigates: worker efficiency, material condition. Log in register. Flag if cumulative loss approaching quarterly audit limit."
+      },
+      {
+        "what": "Sorted Material Bagged + Tagged for Packing Line",
+        "who": "Labour supervised by Naveen Chourey",
+        "when": "After sorting + weighment complete",
+        "how": "Sorted good material transferred to holding bags/bins. Lot tag updated: SORTED + date + weight. Moved to packing line input area. Ready for T-07 (Pulses) or T-08 (Makhana)."
+      },
+      {
+        "what": "Sorting Rejects — Weighed + Held for Tata",
+        "who": "Sanju Jatav (stores). Bhupendra (SAP entry).",
+        "when": "Same day as sorting completion",
+        "how": "Reject material weighed + stored separately. Entered in SAP as sorting loss/rejection against lot. Tata quarterly audit will reconcile. Do NOT discard without Tata approval. SORTING COMPLETE — PROCEED TO T-07 (PULSES) OR T-08 (MAKHANA) PACKING LINE"
+      }
+    ]
+  },
+  {
+    "code": "T-05",
+    "title": "| DFPL Palda",
+    "source_file": "DFW-TAT-PF-T05_PostFum_QC.html",
+    "steps": [
+      {
+        "what": "QC Team Informed — Lot Ready for Post-Fum QC",
+        "who": "Bhupendra informs Lucky / Ashish",
+        "when": "On fumigation opening day (T-03 end)",
+        "how": "WhatsApp: lot no., material, qty, fumigation open date. QC team schedules inspection same day or next morning."
+      },
+      {
+        "what": "Physical Condition Check Post-Fumigation",
+        "who": "Tata QC + Lucky / Ashish (jointly)",
+        "when": "After fumigation opening — same day or next day",
+        "how": "Check bag condition: any torn/damaged bags due to fumigation. Check for residual phosphine odour (must be dissipated). Visual check for any insect activity remaining. Confirm tarpaulin removed properly by NBHC."
+      },
+      {
+        "what": "Post-Fumigation Parameter Testing",
+        "who": "Tata QC + Lucky / Ashish (jointly)",
+        "when": "Same day as fumigation opening",
+        "how": "Sample taken from multiple points of lot. Test: Moisture (critical — must not have increased during fumigation), Infestation check (live insects NIL post fumigation), Broken%, Discolour%, Weevil/larva status (Makhana). Sensory soaking test for pulses (TCPL/F-PL/DF/FM 20). Same format as incoming: TCPL/F-PL/OM/FM-15 (Pulses) / TCPL/DFN/3P/1.5 (Makhana). Post-Fum RM Analysis TCPL/F-PL/OM/FM-15 (Pulses) TCPL/DFN/3P/1.5 (Makhana) + Sensory FM-20 Post-Fumigation QC Result? Who: Tata QC Supervisor  When: Post testing CLEARED FAIL / HOLD RE-FUMIGATE LOT ON HOLD Bhupendra + Tata decide action."
+      },
+      {
+        "what": "Re-Fumigation Required",
+        "who": "Bhupendra schedules NBHC. Count tracked.",
+        "when": "If live infestation found post fumigation",
+        "how": "Return to T-03. Max 3 total fumigations per lot. Re-fumigation counter updated in inward register."
+      },
+      {
+        "what": "Sort Remark Confirmed / Updated",
+        "who": "Lucky / Ashish Patidar (QC)",
+        "when": "At time of post-fum QC clearance",
+        "how": "Review original sort remark from inward QC. Update if post-fum condition has changed. Compulsory sort: Kabuli Chana, Kala Chana, Rajmah, Peanut. Makhana + others: QC decision. Sort remark recorded on lot tag. Sort remark on lot tag: SORT REQUIRED / NO SORT REQUIRED + material + lot no."
+      },
+      {
+        "what": "Production Clearance Issued — Lot Released",
+        "who": "Lucky / Ashish issue written clearance. Bhupendra updates plan.",
+        "when": "After all QC parameters passed",
+        "how": "QC clearance note attached to lot. Lot status: Cleared for Packing. Bhupendra aligns with weekly PR from Kirti. Informs Naveen Chourey (packing supervisor) lot is ready. Production Clearance Note — attached to lot tag Lot no. + material + cleared date + QC sign"
+      },
+      {
+        "what": "Lot Added to Production Queue",
+        "who": "Naveen Chourey (Packing Supervisor)",
+        "when": "After clearance received from Bhupendra",
+        "how": "Naveen plans packing sequence per weekly PR. Sort-required lots go to hand sorting tables first (T-06). Direct-pack lots go straight to packing line (T-07 / T-08). Sort-required: Kabuli, Kala, Rajmah, Peanut, Makhana (if remarked) → T-06 (Sorting). Others → T-07/T-08 (Packing) SORT-REQUIRED: PROCEED TO T-06 | DIRECT PACK: PROCEED TO T-07/T-08"
+      }
+    ]
+  },
+  {
+    "code": "T-14",
+    "title": "V2 Loss Breach Debit Note",
+    "source_file": "DFW-TAT-PF-T14-V2_Loss_Breach.html",
+    "steps": [
+      {
+        "what": "Tata Raises Debit Note per Material in Breach",
+        "who": "Tata Finance / Commercial team",
+        "when": "Within 7 working days of audit completion",
+        "how": "Debit Note per material: excess loss qty x material rate (contract price). Separate debit notes for: Pulses (>0.80% breach), Makhana (>1%), Laminate (>1%), Outer Bag (>0%). Sent to Bhupendra via email. Bhupendra logs receipt date + amount per material. Debit Note(s) from Tata — per material in breach Excess loss qty × contract rate. Logged by Bhupendra."
+      },
+      {
+        "what": "Bhupendra Informs MD Immediately",
+        "who": "Bhupendra → Rahul Arora (MD)",
+        "when": "Same day debit note received",
+        "how": "WhatsApp + email to MD: debit note amount per material, excess loss qty, audit report reference, material-wise breakdown. Copy to Yash Sharma + Sunil Kumar Sen. Do NOT accept or dispute without MD approval. MD MUST be informed before any acceptance or dispute. No exceptions."
+      },
+      {
+        "what": "Debit Note Calculation Verified — 4 Checks",
+        "who": "Bhupendra Rajput + Sunil Kumar Sen",
+        "when": "Within 2 working days of receipt",
+        "how": "Verify all 4 points per debit note: (1) Correct loss limit applied — Pulses 0.80%, Makhana 1%, Laminate 1%, Outer Bag 0%? (2) Actual loss qty matches signed audit report? (3) Material rate correct per Tata contract? (4) Arithmetic correct? Prepare verification note with findings. Calculation Correct? Bhupendra verifies all 4 points CORRECT DISPUTE"
+      },
+      {
+        "what": "MD Raises Dispute with Tata Commercial",
+        "who": "Rahul Arora (MD) + Bhupendra",
+        "when": "Within 3 working days of debit note",
+        "how": "MD calls or emails Tata commercial (Mayank Santhalia). Share: Dinero's own calculation, discrepancy per material, supporting documents. Negotiate revised debit note. Document dispute + resolution in writing."
+      },
+      {
+        "what": "MD Approves Acceptance",
+        "who": "Rahul Arora (MD)",
+        "when": "After Bhupendra confirms calculation is correct",
+        "how": "MD reviews verification note. WhatsApp approval to Bhupendra. If disputed and revised: MD approves revised amount. Absolute rule: no debit accepted without MD approval."
+      },
+      {
+        "what": "Debit Note Booked in Tally per Material",
+        "who": "Yash Sharma (Sr. Accountant)",
+        "when": "Within 3 working days of MD approval",
+        "how": "Book each debit note in Tally: Debit = Loss on Job Work account, Credit = Tata payable. Separate entries per material. Adjustment method: either deducted from next monthly invoice (T-16) or separate payment per agreement with Tata. File debit note in Compliance folder. Debit Note Booked in Tally (Yash) Adjustment via T-16 monthly invoice or separate payment."
+      },
+      {
+        "what": "Root Cause Analysis + Corrective Action Plan",
+        "who": "Bhupendra + Sunil (ops). Rahul Arora (MD reviews + approves).",
+        "when": "Within 1 week of debit note acceptance",
+        "how": "Identify root cause per material in breach: machine efficiency, sorting loss, moisture gain during fumigation, pilferage, counting errors, laminate damage rate. For outer bag breach (0% limit — zero tolerance): investigate every instance. Set corrective action with target date + owner. MD reviews CAP. Prevention > compensation. Every debit note = system failure. Outer bag limit = 0% — zero tolerance. Root cause mandatory every time. DEBIT NOTE RESOLVED — TALLY BOOKED — ROOT CAUSE FIXED — FEEDS T-16 (MONTHLY INVOICE ADJUSTMENT)"
+      }
+    ]
+  },
+  {
+    "code": "T-07",
+    "title": "V2",
+    "source_file": "DFW-TAT-PF-T07-V2_Pulses_Packing.html",
+    "steps": [
+      {
+        "what": "Lot Planning + RM & PM Issuance",
+        "who": "Sanju Jatav (RM Supervisor) issues to Naveen (Packing In-charge)",
+        "when": "Before line setup — per weekly PR from Kirti (Tata Ops)",
+        "how": "FIFO lots confirmed per vendor plan. Issue: RM lot (bags), film roll (with roll weight), outer bags (with bag count). Lot labour transfers RM + PM from RM store to packing room. Issuance documented (roll weights + bag counts). RM + PM Issuance Record (Sanju → Naveen) Roll weights + bag counts. FIFO lot confirmed. Deep or Normal Cleaning? Deep: product change or >=24hr run | Normal: shift change (12hr) NORMAL CLEAN DEEP CLEAN"
+      },
+      {
+        "what": "Deep Cleaning — Product Change or 24hr Run",
+        "who": "Operator + Supervisor (Naveen). QA verifies (Lucky/Ashish).",
+        "when": "On product changeover OR after 24 hours continuous run",
+        "how": "Open equipment one by one with compressor. Clean MTRA, destoner, Z-elevators, buffer tank, FFS machine, conveyor, checkweigher. 70% IPA wet clean where required. Equipment Cleaning Format DFPL/PRD/SOP-01/FRM/04 filled. Photo evidence taken."
+      },
+      {
+        "what": "Line Clearance — 17-Point Checklist",
+        "who": "Operator + Naveen fills. Lucky/Ashish (QA) verifies + signs.",
+        "when": "After cleaning — before any production starts",
+        "how": "DFPL/PRD/SOP-01/FRM/01: dump hopper, elevator, MTRA/Vibro, sieves, destoner, magnet rod, conveyor/cabinet, packing machine, FG+RM off floor, flushing needed (yes/no), belt conveyor, metal detector clean+verified, floor, weighing balance verified, checkweigher clean+verified, production area, nut/bolt check. Final: LINE CLEARANCE STATUS: Cleared/Not Cleared Line Clearance/Changeover Checklist DFPL/PRD/SOP-01/FRM/01 17 points. Signed: Operator + Supervisor + QA Verify Sign"
+      },
+      {
+        "what": "Mandatory Pre-Start Photos — Magnets + Sieves",
+        "who": "Lucky / Ashish Patidar (QA)",
+        "when": "After line clearance — before QA authorization",
+        "how": "Photograph: Magnet Rod 01, 02, 03 (clean state confirmed). Sieve/screen condition photo. Metal detector connected and functional. Photos saved in WhatsApp group + Google Drive. Magnet Rod Cleaning Record DFPL/PRD/SOP-7/FRM/01 updated. Magnet Rod Cleaning Record DFPL/PRD/SOP-7/FRM/01 3 magnet rods logged. Photos filed in Drive."
+      },
+      {
+        "what": "Changeover Flushing (if product change)",
+        "who": "Naveen Chourey + Packing operators",
+        "when": "Only if different product from previous run",
+        "how": "Add 30-50 kg of same new product to flush the line. Collect flushed material. Sort separately on hand-sort tables. Reuse flushed material in same lot immediately. Document in Production Log. If same product — skip. Skip if same product continues. Flushing quantity: 30-50kg. Sorted + reused same lot."
+      },
+      {
+        "what": "Empty Pouch Batch Print QA Approval",
+        "who": "Naveen sets up printers. Lucky / Ashish (QA) approves.",
+        "when": "Before first product pouch — mandatory",
+        "how": "Configure FFS dual printers: Printer 1 = MRP, unit price, pack date, expiry, timestamp, batch no. (back). Printer 2 = item name (front). Print on empty pouch. QA checks legibility + correctness. APPROVE before production. If wrong: correct and reprint. First 50 packs at risk if error found late. Outer bag hand-coder: only 3 items — pack date, expiry date, batch no. Different from pouch."
+      },
+      {
+        "what": "Sealing Check — First 5 Pouches Before Full Run",
+        "who": "Lucky / Ashish (QA). Naveen corrects if issue.",
+        "when": "First 5 pouches at line start",
+        "how": "Check: seal integrity (no open/weak seals), net weight vs declared (500g or 1kg), film alignment, coding clarity. If sealing issue: STOP and correct machine immediately. Do not allow run to continue — first 50 packs can be defective if uncorrected. QA sign-off before full run. SECTION 2 — PRODUCTION RUN: MACHINE FLOW (HACCP CONTROLS ACTIVE) HACCP: CCP1=Fumigation (complete). CCP2=Metal Detector (online, integrated in FFS). OPRP=Magnets + MTRA rails/screens + Destoner function"
+      },
+      {
+        "what": "50kg RM Bags Opened + Dumped into Bucket Elevator",
+        "who": "Labour supervised by Naveen Chourey",
+        "when": "Continuously during production run",
+        "how": "Labour opens 50kg RM bags, dumps into bucket elevator hopper. Upstream MAGNET (OPRP) at hopper input captures ferrous material. Seal integrity of hopper checked. Spillage collected in designated tray. Bags counted as dumped for Production GR. MACHINE FLOW: BUCKET ELEV. > MTRA (OPRP) > DESTONER (OPRP) > Z-ELEV. > BUFFER > Z-ELEV. (COMMON) > FFS L1 + L3"
+      },
+      {
+        "what": "MTRA Cleaner (OPRP) + Destoner (OPRP)",
+        "who": "Machine Operators. QA monitors rejection streams.",
+        "when": "Continuously during run",
+        "how": "MTRA: sifts/grades material. 2 rejection streams: MTRA Pipe 1 (powder) + MTRA Pipe 2 (oversized grain). Plus Airlock/RAL ejections. Destoner: removes stones/heavies — 1 rejection stream (Destoner/Magnet rod box area). All 4+ streams collected + recorded in Waste Log Sheet DFPL/WCM/FRM/02. Waste Log Sheet DFPL/WCM/FRM/02 MTRA Pipe1 + Pipe2 + Airlock/Vibro + Destoner/Magnet area + Floor Spillage"
+      },
+      {
+        "what": "Z-Elevator > Buffer Tank > Z-Elevator > FFS L1 + L3",
+        "who": "Machine Operators (one per FFS machine)",
+        "when": "Continuously during run",
+        "how": "Destoned product: Z-elevator > buffer tank > common Z-elevator > double drop to FFS L1 and L3 simultaneously. CCP2: ONLINE METAL DETECTOR integrated in each FFS machine. FFS forms, fills, seals pouches (500g or 1kg). Throughput: L1 (1kg=40-42ppm, 500g=50-52ppm). L3 (500g=45-48ppm, 1kg=~40ppm alone). Common Z-elevator = potential bottleneck when both lines run. CCP2: Metal Detector in FFS — MUST be active and validated before run starts and every 2 hours."
+      },
+      {
+        "what": "Pouch Conveyor > Checkweigher (x2) > Belt-End Inspection",
+        "who": "Belt-end labour (every pouch). QA hourly checks.",
+        "when": "Continuously during run",
+        "how": "Pouches from FFS to pouch pick-up conveyor > 2 checkweighers (one per line). Checkweigher: rejects under/overweight pouches automatically. Belt-end labour inspects every pouch front + back — visual check for sealing defects, print quality, foreign matter. Under/overweight rejects segregated + recorded."
+      },
+      {
+        "what": "Master Bag Packing + Hand-Code + Stitch + Palletize",
+        "who": "Belt-end labour. Naveen supervises. Dharam Singh takes FG.",
+        "when": "Continuously as pouches complete inspection",
+        "how": "Manually pack into master bags: 10kg (20x500g or 10x1kg) or 25kg (50x500g or 25x1kg). Stitch master bag. Hand-coder on outer bag: pack date + expiry date + batch no. Write gross weight on bag. Palletize. Move to FG area. Dharam Singh takes custody — FG Stock Register DFPL/FGD/SOP-1/FRM/02 updated. FG Stock Register DFPL/FGD/SOP-1/FRM/02 (Dharam Singh) Opening stock + production today + dispatch + FG closing. Signed: Dharam + Bhupendra SECTION 3 — QC CHECKPOINTS (RUNNING IN PARALLEL THROUGHOUT PRODUCTION)"
+      },
+      {
+        "what": "Metal Detector Challenge Test (CCP2)",
+        "who": "Lucky / Ashish Patidar",
+        "when": "Startup + Every 2 hours + Shutdown",
+        "how": "Use test cards: Fe 1.2mm (M01/M03) / Fe 2.0mm (M02), Nfe 1.5mm/2.5mm, SS 1.8mm/3.0mm — per machine. Pass/Fail recorded. If fail: STOP LINE, investigate, re-verify. Metal Detector Verification Format DFPL/QAC/SOP-04/FRM/01 filled. Metal Detector Verification DFPL/QAC/SOP-04/FRM/01 3 machines. Fe/Nfe/SS test cards. Startup+2hr+shutdown."
+      },
+      {
+        "what": "Hourly Weight Check + Vacuum Leak Test (Every 2hr)",
+        "who": "Lucky / Ashish Patidar",
+        "when": "Weight: every 1 hour | Vacuum Leak: every 2 hours (2 packets)",
+        "how": "Weight check: individual pouch gross weight (gm) + master bag gross weight — recorded in Packing Machine Operation Log DFPL/PRD/SOP-05/FRM/04. Monitor extra giveaway. Vacuum Leak Test (TCPL/F-PL/DF/FM 11): 2 packets per test — squeeze test for seal integrity. Corrective action if fail. Packing Machine Operation Log DFPL/PRD/SOP-05/FRM/04 Hourly: weight(gm), seal quality, film alignment, coding clarity, foreign body. + Laminate waste + Breakdown log"
+      },
+      {
+        "what": "QA Online Inspection — Every 1.5 Hours",
+        "who": "Lucky / Ashish Patidar",
+        "when": "Every 1.5 hours during run",
+        "how": "Full inspection round: pouch weight, seal quality, front+back printing (MRP, pack date, expiry, batch no., item name), outer bag coding, bag drop test, print adhesion. Record in inspection format. Any fail: instruct Naveen to correct immediately. STOP line if CCP/OPRP breach. Vacuum Leak Test (TCPL/F-PL/DF/FM 11): 2 packets every 2 hours. Pass/Fail + corrective action. SECTION 4 — EOD: SAP PRODUCTION GR + WASTE LOG + FG HANDOVER"
+      },
+      {
+        "what": "Production Run Ends",
+        "who": "Naveen Chourey",
+        "when": "18:30 daily (ladies leave) or when lot completes",
+        "how": "Machine stops. Final counts: master bags packed, RM bags consumed. Normal cleaning by day shift. Night shift begins with same product (no deep clean) or deep clean if product changes."
+      },
+      {
+        "what": "SAP Production GR — Within 3 Hours of Shift Completion",
+        "who": "Bhupendra Rajput",
+        "when": "Within 3 hours of shift end. Night shift GRs done in morning.",
+        "how": "SAP: record RM consumed (bags x 50kg) vs FG produced (master bags x bag weight). Calculate line loss. Production GR generates FG stock in Tata SAP. Loss limit: Pulses 0.80%. If approaching — alert Sunil + MD immediately. Screenshot filed in Google Drive. Loss limit: PULSES = 0.80% (NOT 1%). Approach at 0.7% = alert MD immediately."
+      },
+      {
+        "what": "Waste Log Sheet Completed for the Shift",
+        "who": "Naveen Chourey fills. Lucky / Ashish verifies.",
+        "when": "End of shift",
+        "how": "DFPL/WCM/FRM/02: MTRA Pipe 1 qty, MTRA Pipe 2 qty, Airlock/Vibro rejection qty, Destoner/Magnet rod box area rejection qty, Floor Spillage qty, Total Rejection, Remarks. Signed by Naveen + Lucky. Waste Log Sheet DFPL/WCM/FRM/02 — filled EOD 5 rejection streams recorded per shift."
+      },
+      {
+        "what": "Packing Machine Operation Log — Shift Completed",
+        "who": "Naveen Chourey completes. Operator signs.",
+        "when": "End of shift",
+        "how": "DFPL/PRD/SOP-05/FRM/04: Total RM used, Total FG produced, Machine start/stop time, Laminate waste total, Sealer temperatures (vertical + horizontal), Ribbon used (company + details), Breakdown record (stop time + reason + action). Signed: Operator + Shift Incharge. SHIFT COMPLETE — SAP GR DONE — WASTE LOG FILLED — FG WITH DHARAM SINGH — T-09 FOR FG RELEASE"
+      }
+    ]
+  },
+  {
+    "code": "T-08",
+    "title": "V2 Makhana Packing",
+    "source_file": "DFW-TAT-PF-T08-V2_Makhana_Packing.html",
+    "steps": [
+      {
+        "what": "Makhana Lot Issuance to Packing Room",
+        "who": "Sanju Jatav (RM Supervisor) issues to Naveen",
+        "when": "Before line setup — per weekly PR from Kirti (Tata Ops)",
+        "how": "FIFO lot confirmed. Issue: Makhana lot (bags) + specific pre-printed pouches (100g or 200g) + outer bags (with liners) + CFC cartons. Lot labour transfers from RM store to dedicated Makhana room. Roll/bag counts documented. Makhana RM + PM Issuance Record (Sanju) Pouch count, outer bag count, lot no. confirmed FIFO"
+      },
+      {
+        "what": "Makhana Line Cleaning — ~30 Minutes",
+        "who": "Operator + Naveen. Lucky / Ashish (QA) verifies.",
+        "when": "Before each production run",
+        "how": "Line cleaning for Makhana takes ~30 minutes. Clean: vibro sieve, Z-elevator, FFS machine (hoppers, feeder, chute, sealing jaws, conveyor). Magnet on Z-elevator cleaned and photographed. Check room is dust-free and pest-free. Line Clearance Checklist filled. Line Clearance Checklist DFPL/PRD/SOP-01/FRM/01 Makhana-specific: vibro + Z-elev + FFS machine checks. QA sign. Post-fum deviation? Use Big Vibro? If dead insects found in T-05 post-fum QC NO — proceed YES"
+      },
+      {
+        "what": "Filter Through Big Vibro Sieve (External)",
+        "who": "Naveen Chourey + Labour",
+        "when": "Before packing — only when dead insects found",
+        "how": "Pass lot through big external vibro sieve to filter dead insects and size deviations. Document use. Only when post-fumigation QC found insect deviation that was passed under deviation."
+      },
+      {
+        "what": "Starting Operation Daily Shift Record — 17 Parameters",
+        "who": "Operator + Naveen fills. Lucky / Ashish verifies.",
+        "when": "Before production — mandatory QA confirmation",
+        "how": "TCPL/DFN/3P/4.6: Physical/Biological/Chemical Risk checked, product contact surface, dump hopper clean, elevator tray, multi-head area + cups, printer head, Product Name + SKU confirmed, Pouch Coding Information, Pouches Per Minute, Sealing Check, Weight Check, All QC checks OK. Final: Confirm For Production: YES/NO. Starting Operation Daily Shift TCPL/DFN/3P/4.6 17 parameters. Signed: Operator (Checked By) + Tata/Dinero QA (Verified By). Production ONLY after YES."
+      },
+      {
+        "what": "Magnet Photo + Back Printer Setup",
+        "who": "Naveen (printer setup). Lucky / Ashish (magnet photo + verify).",
+        "when": "After starting operation record — before first pouch",
+        "how": "Photograph Z-elevator magnet (clean state). FFS machine: back printer ONLY — configure batch no., pack date, expiry date. NO barcode, NO item name printer (pouches are pre-printed with product name). QA verifies printer output on empty pouch before production. Makhana FFS: BACK PRINTER ONLY. Pre-printed specific pouches. No front printer, no barcode. SECTION 2 — PRODUCTION RUN: VIBRO > Z-ELEV (MAGNET/OPRP) > FFS > METAL DETECTOR (CCP2) > MANUAL WEIGH > MASTER BAG HACCP: CCP1=Fumigation (complete). CCP2=Metal Detector (online, Makhana line). OPRP=Magnet on Z-elevator + Vibro sieve."
+      },
+      {
+        "what": "Makhana Bags Dumped into Vibro Sieve (Online, Round)",
+        "who": "Labour supervised by Naveen Chourey",
+        "when": "Continuously during production run",
+        "how": "Makhana bags gently opened and dumped into vibro sieve. GENTLE HANDLING — Makhana is fragile. Vibro sieve: sifts and feeds material forward. Controls: vibration setting per product to minimize damage. Vibro-induced damage collected separately as rejection."
+      },
+      {
+        "what": "Z-Elevator with Magnet (OPRP) — Elevates to FFS",
+        "who": "Machine Operator monitors",
+        "when": "Continuously during run",
+        "how": "Material passes through Z-elevator with integrated magnet (OPRP) — captures ferrous contamination. Directly feeds FFS machine (no buffer tank for Makhana). Operator monitors for blockages."
+      },
+      {
+        "what": "FFS Packing — Specific Pouches + Back Printing + CCP2 Metal Detector",
+        "who": "Machine Operator (Makhana line)",
+        "when": "Continuously during production run",
+        "how": "FFS forms specific pre-printed pouches (100g or 200g). Fills Makhana. Seals. BACK PRINTER: prints pack date, expiry date, batch no. only. NO front printer, NO barcode. CCP2: ONLINE METAL DETECTOR — active throughout. Pouch output continues to manual weighing station. NO checkweigher for Makhana. Manual weighing only. Known gap — giveaway risk higher."
+      },
+      {
+        "what": "Manual Weighing — Each Pouch Individually",
+        "who": "Labour at weighing station. QA spot-checks.",
+        "when": "Each pouch individually weighed before placing in master bag",
+        "how": "NO automated checkweigher. Labour uses manual weighing scale. Each pouch: gross weight recorded. Net weight = gross - empty pouch weight. Monitor extra giveaway. Pouches not meeting weight: set aside for re-weighing or rework. Weight Monitoring Record TCPL/DFN/3P/4.1 filled at shift start (130 pouches) and hourly (10 pouches/machine/shift). Weight Monitoring Record TCPL/DFN/3P/4.1 130 pouches at shift start + 10/machine/shift hourly. Avg Gross Wt + Empty Pouch Wt + Net Wt. Dinero QA + TCPL QA sign."
+      },
+      {
+        "what": "Manual Packing into Master Bag + Hand-Code + Stitch",
+        "who": "Labour supervised by Naveen. Dharam Singh takes FG.",
+        "when": "Continuously as pouches pass weighing",
+        "how": "Count + pack: 100g = 36 pouches per 3.60kg master bag. 200g = 18 pouches per 3.60kg master bag. Count critical — verify before stitching. Hand-code outer bag: pack date + expiry + batch no. Write gross weight. Palletize. FG area — Dharam Singh custody. FG Stock Register DFPL/FGD/SOP-1/FRM/02 updated. FG Stock Register DFPL/FGD/SOP-1/FRM/02 (Dharam Singh) 100g: 36 pcs / 3.60kg bag | 200g: 18 pcs / 3.60kg bag SECTION 2B — MAKHANA HAND SORTING (ONLY ON QC DEVIATION — NOT ALWAYS COMPULSORY) QC Sort Remark on lot tag? Marked in T-05 post-fum QC by Lucky/Ashish NO SORT — skip SORT REQUIRED"
+      },
+      {
+        "what": "Makhana Hand Sorting on Deviation",
+        "who": "2 female workers per table. Same 5 tables as pulses.",
+        "when": "Before packing — only when QC deviation sort remark given",
+        "how": "Sort on shared hand-sorting tables (max 5 tables, 2 currently operational). Remove: vibro-damaged kernels, crushed/pressed grains, foreign matter. Sorted material continues to packing. Rejects recorded. Cost: Rs.4/kg billed immediately to Tata (hand-sorting billing). Makhana sorting cost: Rs.4/kg billed IMMEDIATELY when deviation marked — NOT at month end. SECTION 3 — QC CHECKPOINTS RUNNING IN PARALLEL THROUGHOUT PRODUCTION"
+      },
+      {
+        "what": "Metal Detector Challenge Test (CCP2)",
+        "who": "Lucky / Ashish Patidar",
+        "when": "Startup + Every 2 hours + Shutdown",
+        "how": "Same format as pulses: DFPL/QAC/SOP-04/FRM/01. Test cards per machine sensitivity. Pass/Fail. If FAIL: STOP LINE immediately. Investigate. Re-verify before restart. CCP2 for Makhana — non-negotiable. Metal Detector Verification DFPL/QAC/SOP-04/FRM/01 Startup + 2hr + shutdown. CCP2 for Makhana."
+      },
+      {
+        "what": "Weight Monitoring — Pouches + Master Bags",
+        "who": "Lucky / Ashish Patidar + Tata QC",
+        "when": "Pouches: 130 at shift start + 10/machine/hr | Master bags: 5 bags/hour",
+        "how": "Pouch weight monitoring TCPL/DFN/3P/4.1: 130 pouches weighed at shift start across 13 machine slots. Then 10 pouches per machine per shift hourly. Calculate: Avg Gross Wt, Empty Pouch Wt, Net Wt. Bag weight monitoring TCPL/DFN/3P/4.2: 5 master bags per hour — bag weight checked. Product Released for Dispatch: YES/NO. BOTH Dinero QA + TCPL QA sign. Weight Monitoring TCPL/DFN/3P/4.1 (pouches) Bag Weight Monitoring TCPL/DFN/3P/4.2 (5 bags/hr). Both: Dinero QA + TCPL QA sign."
+      },
+      {
+        "what": "Vacuum Leak Test + Dry Fruits Sensory Evaluation",
+        "who": "Lucky / Ashish Patidar + Tata QC",
+        "when": "Vacuum Leak: every 2 hours (2 packets) | Sensory: per batch",
+        "how": "Vacuum Leak Test TCPL/F-PL/DF/FM 11: 2 packets every 2 hours — squeeze test for seal integrity. Pass/Fail + corrective action. Sensory Evaluation for Dry Fruits (Tata format): Appearance, Aroma, Taste, Colour, Overall Acceptance — rated 1-5. Done per batch for QA records. Vacuum Leak TCPL/F-PL/DF/FM 11 + Sensory Dry Fruits Both forms filed per shift/batch. SECTION 4 — EOD: SAP PRODUCTION GR + FG STOCK REGISTER + WASTE LOG"
+      },
+      {
+        "what": "SAP Production GR + Product Release Decision",
+        "who": "Bhupendra Rajput (SAP) + Lucky/Ashish (release)",
+        "when": "Within 3 hours of shift completion",
+        "how": "SAP: RM consumed vs FG produced. Loss calculation. LOSS LIMIT: MAKHANA = 1% (NOT 1.5%). If loss >0.7%: alert Sunil + MD. Weight Monitoring Record TCPL/DFN/3P/4.1 must show: Product Released for Dispatch = YES (Dinero QA + TCPL QA signed) before SAP GR is created. Screenshot filed in Drive. Loss limit: MAKHANA = 1% (NOT 1.5%). Alert at 0.7%. Debit at quarterly audit if exceeded."
+      },
+      {
+        "what": "Waste Log + Packing Machine Operation Log Completed",
+        "who": "Naveen fills Waste Log. Operator completes Operation Log.",
+        "when": "End of shift",
+        "how": "Waste Log DFPL/WCM/FRM/02: Airlock/Vibro rejection qty + floor spillage (Makhana has minimal MTRA/destoner rejects — vibro damage is primary rejection). Operation Log DFPL/PRD/SOP-05/FRM/04: total RM used, total FG produced, machine start/stop times, breakdown if any. Waste Log DFPL/WCM/FRM/02 + Operation Log FRM/04 Makhana: Airlock/Vibro + floor spillage. Vibro damage primary stream."
+      },
+      {
+        "what": "Control Sample Retained",
+        "who": "Lucky / Ashish Patidar",
+        "when": "Per production batch",
+        "how": "Retain control sample per batch: Product name, batch no./lot no., MRP, pack size, Mfg date, Exp date, qty of sample taken, sign. Store in last tier of warehouse. Retain until expiry (up to 6-12 months). Control Sample Register DFPL/QAC/SOP-6/FRM/01 updated. Control Sample Register DFPL/QAC/SOP-6/FRM/01 Retained until expiry. Stored last tier. Audit-ready. MAKHANA PACKING COMPLETE — FG RELEASED — SAP GR DONE — PROCEED TO T-09 (FG QC RELEASE)"
+      }
+    ]
+  },
+  {
+    "code": "T-17",
+    "title": "· Tata Plant",
+    "source_file": "DFW-TAT-PF-T17_Labour_Consumables_Cost.html",
+    "steps": [
+      {
+        "what": "Daily Labour Attendance Recorded",
+        "who": "Naveen Chourey (packing line) records",
+        "when": "EOD every working day",
+        "how": "Record: each worker name, attendance (present/absent), shift (day/night), task (packing line / sorting / other). Separate records for contract labour. Number of workers per line per shift. Send to Bhupendra by 6 PM. Daily Labour Attendance Sheet (Naveen) Worker-wise: name + present/absent + task + shift"
+      },
+      {
+        "what": "Consumables Used Recorded + Received",
+        "who": "Bhupendra Rajput",
+        "when": "Daily — when consumables issued or received",
+        "how": "Record consumables used: thread (for bag stitching), cartons (if used), cleaning chemicals, PPE (gloves, masks), maintenance items, lubricants. Bhupendra receives all consumables and records in consumables register. Update stock levels. Consumables Register (Bhupendra) Item + qty used + qty in stock. Replenishment trigger noted. MONTHLY COMPILATION — DONE BY 5th OF FOLLOWING MONTH"
+      },
+      {
+        "what": "Monthly Labour Cost Compiled",
+        "who": "Bhupendra compiles. Yash verifies.",
+        "when": "By 5th of following month",
+        "how": "Sum all daily attendance sheets: total man-days per role (packing operator, sorting worker, labour, etc.). Apply daily wage rates: packing line x rate, sorting workers x rate. Calculate total labour cost. Split by activity: packing vs sorting vs other."
+      },
+      {
+        "what": "Monthly Consumables Cost Compiled",
+        "who": "Bhupendra compiles. Yash verifies.",
+        "when": "By 5th of following month",
+        "how": "Sum all consumables used in the month from register. Apply purchase rates to calculate cost. Categories: packing materials (thread, cartons), cleaning, PPE, maintenance. Total consumables cost for the month. Monthly Consumables Cost Sheet (Bhupendra) Category-wise total. Compare vs prior month."
+      },
+      {
+        "what": "Cost Per SKU Calculated",
+        "who": "Bhupendra calculates. Yash reviews for accuracy.",
+        "when": "By 7th of following month",
+        "how": "Allocate total labour + consumables cost across SKUs based on qty packed. Formula: Cost per kg = Total cost / Total kg packed. Apply per SKU. Compare vs contract rate to check Dinero's net margin per SKU. Flag any SKU with negative margin. Monthly Cost per SKU Report (Bhupendra + Yash) Revenue (invoice) - Labour - Consumables = Net margin per SKU"
+      },
+      {
+        "what": "Monthly Cost + Margin Report Sent to MD",
+        "who": "Yash Sharma emails report to Rahul Arora (MD)",
+        "when": "By 7th of following month",
+        "how": "Report: Labour cost, Consumables cost, Total operating cost, Revenue per invoice (T-16), Net margin per SKU, Comparison vs prior month. MD reviews at FAM (Financial Accountability Meeting). Monthly P&L Report — Tata Plant (Yash to MD) Feeds MD Dashboard + FAM review + Financial Summary Sheet MONTHLY COST TRACKING COMPLETE — SKU MARGINS KNOWN — FEEDS MD DASHBOARD + FAM"
+      }
+    ]
+  },
+  {
+    "code": "T-04",
+    "title": "| DFPL Palda",
+    "source_file": "DFW-TAT-PF-T04_PM_Inward.html",
+    "steps": [
+      {
+        "what": "Vehicle Inspection + Security Photos",
+        "who": "Sanju Jatav + Security Guard",
+        "when": "On PM truck arrival",
+        "how": "Same process as RM: 4 security photos (front/back/sides). 10-point checklist DFPL/STR/SOP-2/FRM/01. PM specific: check for oil contamination on vehicle — critical as oil damages laminates. Vehicle Inspection DFPL/STR/SOP-2/FRM/01 Oil contamination check critical for PM vehicles."
+      },
+      {
+        "what": "Lot Number Assigned + Initial Visual Check",
+        "who": "Sanju Jatav + Lucky / Ashish",
+        "when": "Before unloading",
+        "how": "PM lot number assigned (separate series from RM lots). Visual check: outer bags — if no major issue, can unload without full QC approval. Rolls: check for any new design changes vs previous lot. PM Lot Number (Dinero series — separate from RM) FIFO tracking: internal marking by Sanju for old vs new lots Major Issue at Truck Level? Who: Lucky/Ashish  When: Initial visual NO — Proceed YES"
+      },
+      {
+        "what": "Issue Flagged — Hold PM",
+        "who": "Sanju informs Tata QC + Bhupendra",
+        "when": "Before unloading",
+        "how": "Document issue with photos. Tata QC decision to accept/reject. If reject: segregate to Supplier Rejection area."
+      },
+      {
+        "what": "PM Unloading + Count",
+        "who": "Labour supervised by Sanju Jatav",
+        "when": "After visual OK / QC clearance",
+        "how": "Unload bags/rolls. Count physical qty vs challan. Note damaged rolls separately — do NOT mix with accepted PM. Rolls stacked in PM storage area. QC INSPECTION — 12 SAMPLES PER LOT (BAGS) / 10 SAMPLES (ROLLS / POUCHES)"
+      },
+      {
+        "what": "PM Quality Inspection — Dimensions, GSM, Physical",
+        "who": "Tata QC + Lucky / Ashish (jointly) — 12 samples per bag lot / 10 per roll lot",
+        "when": "After unloading — same day",
+        "how": "Bags: TCPL/F-DF/FM03 — Physical testing (odour, appearance, text, colour), dimensions (height, width MM/inches), GSM, tare weight. Rolls/Makhana pouches: TCPL/DFN/3P/3.2 — GSM (critical: 104.01-104.09g/m2), height (100g:289-291mm, 200g:359-361mm), width (100g:449-451mm, 200g:499-501mm), delamination (critical), statutory details, printing matter. Drop test: done at production, not inward. Incoming PM Record TCPL/F-DF/FM03 (Bags) PM Analysis Record TCPL/DFN/3P/3.2 (Makhana rolls/pouches) PM Inspection Result? Who: Tata QC + Lucky  When: Post testing ACCEPTED REJECTED"
+      },
+      {
+        "what": "PM Rejected — Segregate to Supplier Rejection Area",
+        "who": "Sanju Jatav segregates. Lucky/Ashish document.",
+        "when": "Same day as QC result",
+        "how": "Move to clearly marked Supplier Rejection area. Photo evidence taken. Inform supplier for pickup. Track: currently not being picked up timely — follow up required. Gap noted: supplier pickup of rejected PM not happening timely. Escalate to Tata."
+      },
+      {
+        "what": "Accepted PM Stored — FIFO Marking",
+        "who": "Sanju Jatav manages PM storage",
+        "when": "After QC acceptance — same day",
+        "how": "PM stored in designated PM area (separate from RM). FIFO enforced: Sanju marks each lot (date + lot no.) on stacks. Old lot to be used first. System does NOT track PM lots — internal physical marking only. No system-based PM lot tracking. Sanju maintains physical FIFO marking only."
+      },
+      {
+        "what": "SAP GR + Inward Register Updated",
+        "who": "Bhupendra Rajput (SAP). Sanju Jatav (register).",
+        "when": "Same day as PM acceptance",
+        "how": "Bhupendra: SAP GR for PM vs Tata PO. Sanju: Inward register entry (PM section) — date, supplier, material, lot no., qty, invoice no. GR no. noted in register. SAP GR (Tata) + Inward Register (Dinero) PM section of inward register — separate from RM entries PM ACCEPTED AND STORED — AVAILABLE FOR PRODUCTION PER PR"
+      }
+    ]
+  },
+  {
+    "code": "T-09",
+    "title": "V2 FG QC Release",
+    "source_file": "DFW-TAT-PF-T09-V2_FG_Release.html",
+    "steps": [
+      {
+        "what": "Batch Verification Before SAP GRN",
+        "who": "Naveen Chourey (Production Supervisor) + Dharam Singh (FG)",
+        "when": "Immediately after each production batch is complete",
+        "how": "Naveen verifies production output: SKU correct, batch no. correct, outer bag hand-coding correct (pack date + expiry + batch no.), gross weight written on bag, bags stitched properly. Dharam Singh: physical count of master bags vs production record. Both sign off before SAP GRN is raised. Production Batch Record (Naveen) SKU + batch no. + outer coding + bag count confirmed before GRN STEP 2 — SAP GRN: WITHIN 3 HOURS OF SHIFT COMPLETION (MANDATORY)"
+      },
+      {
+        "what": "SAP Goods Receipt (GRN) — FG Posted",
+        "who": "Bhupendra Rajput",
+        "when": "Within 3 hours of shift completion. Night shift GRNs done next morning. Morning GRNs done in evening.",
+        "how": "Login Tata SAP (DFPL plant code). Post FG GRN: material code (SKU), lot no., qty (master bags x bag weight), production date, batch no. SAP transfer also required: RM to Packing to FG — system-level transfer. GRN no. noted. Screenshot filed in Drive. Do NOT delay — QA cannot release FG until GRN is posted. SAP sequence: RM → Packing → FG transfer mandatory (system transfer, separate from physical GRN). SAP FG GRN + System Transfer (Bhupendra) GRN no. + screenshot filed. QA release only after this. STEP 3 — DAILY FG ANALYSIS REPORT (TATA FORMAT) — QC PARAMETERS VERIFIED"
+      },
+      {
+        "what": "Daily FG Analysis Report — Full Parameter Check",
+        "who": "Tata QC + Lucky / Ashish Patidar (jointly)",
+        "when": "After GRN — same shift or next morning",
+        "how": "TCPL/F-PL/DF/FM-16: Production Date, Material, SKU, Batch No. Parameters: Moisture%, Damaged%, Weevilled%, Foreign Matter Organic%, Other Edible Grain, Broken%, Splits/Whole grain%, Discolour%, Grains with Husk%, Count in 5/28.3gm, De-Husk Dal%, Smooth Grain%, Red Chitras%, Immature Grains%, Cooking Test, Sensory, BAG DROP TEST%, Accepted/Rejected, Checked By, Approved Date, Remark. Daily FG Analysis Report TCPL/F-PL/DF/FM-16 Full QC parameters per batch. Includes Bag Drop Test. Accepted/Rejected + Approved Date. Daily FG Analysis Result? Who: Tata QC Supervisor (final)  When: After testing ACCEPTED REJECTED RE-PACK / REWORK"
+      },
+      {
+        "what": "FG REJECTED",
+        "who": "Bhupendra + Tata",
+        "when": "Immediate",
+        "how": "FG lot put on hold. Investigate. Tata decision on disposition. Do not dispatch."
+      },
+      {
+        "what": "Re-Pack / Rework Required",
+        "who": "Naveen re-packs under QC supervision",
+        "when": "When packing defect found",
+        "how": "Open defective bags. Re-pack on line. Re-verify. Document: rework qty + reason. Separate invoice category for Tata billing (T-16 rework billing). STEP 4 — QA RELEASE: AFTER GRN IS POSTED (NOT BEFORE) — MANDATORY SEQUENCE"
+      },
+      {
+        "what": "QA Releases FG — Post GRN",
+        "who": "Lucky / Ashish Patidar (Dinero QA). Tata QC verifies.",
+        "when": "After SAP GRN is confirmed + Daily FG Analysis accepted",
+        "how": "CORRECT SEQUENCE: GRN must be posted FIRST, then QA releases. QA issues release: lot no., material, SKU, qty released, date. Signs off with Tata QC. Weight Monitoring Record for Makhana must show YES for Product Released for Dispatch. Copy to Bhupendra (SAP) + Dharam Singh (FG storage). GRN FIRST → QA Release AFTER. Not the reverse. FG cannot be dispatched until both steps done."
+      },
+      {
+        "what": "Released FG Placed in Warehouse — FIFO",
+        "who": "Dharam Singh (FG Supervisor)",
+        "when": "After QA release received",
+        "how": "FG pallets moved to designated FG storage area. FIFO enforced within each SKU and lot. Pallet label: Released status + release date + lot no. + SKU. FG area: clean, pest-free, no mixing of lots or SKUs."
+      },
+      {
+        "what": "FG Stock Register Updated",
+        "who": "Dharam Singh fills. Bhupendra (Plant Head) verifies.",
+        "when": "EOD — after all FG for the day is placed",
+        "how": "DFPL/FGD/SOP-1/FRM/02: per product per SKU — Production Date, Shift, Production Batch No., Opening Stock (bags), Dispatch stock (bags), FG Closing (bags), Dispatch Location. Signed: Dharam Singh (FG In-charge) + Bhupendra (Plant Head verify). Filed in Google Drive: 01-Plants/Indore-DFPL-Tata. FG Stock Register DFPL/FGD/SOP-1/FRM/02 Production Date + Shift + Batch + Opening + Dispatch + Closing. Dharam + Bhupendra sign."
+      },
+      {
+        "what": "Daily FG Physical Count Reconciled with SAP",
+        "who": "Dharam Singh (physical count) + Bhupendra (SAP check)",
+        "when": "EOD — every working day",
+        "how": "Dharam Singh: count FG by SKU and lot (released only). Compare vs SAP FG stock. Variance flag to Bhupendra. FG Stock Register closing balance = SAP FG stock. Any mismatch: investigate same day. Data feeds T-12 (daily inventory monitoring) + T-18 (daily MIS to MD). FG Stock Register vs SAP FG Stock — daily reconcile Feeds T-12 Inventory Monitoring + T-18 Daily MIS Report"
+      },
+      {
+        "what": "Control Sample Register Updated per Batch",
+        "who": "Lucky / Ashish Patidar",
+        "when": "Per production batch — same day",
+        "how": "DFPL/QAC/SOP-6/FRM/01: pDate, Product Name, Batch No./Lot No., MRP, Pack Size, Mfg Date, Exp Date, Qty of Sample Taken, Sign, Remarks (If Open for Complaint). Store in last tier of warehouse. Retain up to expiry (6-12 months). Year-end cost recovery accounted for torn pouches. Control Sample Register DFPL/QAC/SOP-6/FRM/01 Last tier storage. Up to expiry. Audit-ready registry. REMINDER: PGI (Pre-Dispatch Inspection) happens at DISPATCH (T-11) — NOT here. There is NO FG Audit at this stage. This is confirmed from the team discussion. PGI done by FG/Dispatch Supervisor + QA permission before loading. FG RELEASED + STORED + REGISTER UPDATED — AVAILABLE FOR DISPATCH (T-10/T-11)"
+      }
+    ]
+  }
+]

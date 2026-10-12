@@ -1,0 +1,113 @@
+{
+  "version": "v9",
+  "engine": "FMS Engine",
+  "integration": "Google Forms",
+  "source_of_truth": "PostgreSQL",
+  "source_document": "DFW-TAT-PF-T07-V2_Pulses_Packing.html",
+  "submission_does_not_complete_stage": true,
+  "pc_review_required": true,
+  "next_stage_activation": "Only after PC marks this step DONE and configured completion conditions pass",
+  "audit_fields": [
+    "form_sent_at",
+    "form_submitted_at",
+    "pc_reviewed_at",
+    "actual_completed_at",
+    "delay_minutes"
+  ],
+  "form_id": "GF-T-07-S14",
+  "fms": {
+    "code": "T-07",
+    "name": "V2"
+  },
+  "stage": {
+    "code": "T-07-S14",
+    "name": "Hourly Weight Check + Vacuum Leak Test (Every 2hr)",
+    "what": "Hourly Weight Check + Vacuum Leak Test (Every 2hr)",
+    "how": "Weight check: individual pouch gross weight (gm) + master bag gross weight — recorded in Packing Machine Operation Log DFPL/PRD/SOP-05/FRM/04. Monitor extra giveaway. Vacuum Leak Test (TCPL/F-PL/DF/FM 11): 2 packets per test — squeeze test for seal integrity. Corrective action if fail. Packing Machine Operation Log DFPL/PRD/SOP-05/FRM/04 Hourly: weight(gm), seal quality, film alignment, coding clarity, foreign body. + Laminate waste + Breakdown log",
+    "who": "Lucky / Ashish Patidar",
+    "when": "Weight: every 1 hour | Vacuum Leak: every 2 hours (2 packets)"
+  },
+  "fields": [
+    {
+      "name": "FMS Instance ID",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Stage Code",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Responsible Person",
+      "type": "text",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Submission Timestamp",
+      "type": "datetime",
+      "required": true,
+      "system": true
+    },
+    {
+      "name": "Planned Date",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "Planned Time",
+      "type": "time",
+      "required": true
+    },
+    {
+      "name": "Step Result",
+      "type": "dropdown",
+      "required": true,
+      "options": [
+        "DONE",
+        "NOT DONE",
+        "HOLD",
+        "EXCEPTION"
+      ]
+    },
+    {
+      "name": "Actual Completion Timestamp",
+      "type": "datetime",
+      "required": false
+    },
+    {
+      "name": "Remarks",
+      "type": "long_text",
+      "required": false
+    },
+    {
+      "name": "Evidence / Photos",
+      "type": "file",
+      "required": false
+    }
+  ],
+  "checklist": [
+    "Acknowledge step: Hourly Weight Check + Vacuum Leak Test (Every 2hr)",
+    "Required information recorded",
+    "Required evidence attached",
+    "Exceptions/deviations recorded if applicable"
+  ],
+  "evidence": [
+    "Required source/process evidence",
+    "Photos/documents where applicable"
+  ],
+  "pc_actions": [
+    "Review submission",
+    "Mark DONE",
+    "Return for correction",
+    "Place HOLD",
+    "Create exception",
+    "Add comment"
+  ],
+  "notes": [
+    "Generated from the Tata/Palda process-flow documentation. Verify final Google Form question wording with process owner before production."
+  ]
+}
