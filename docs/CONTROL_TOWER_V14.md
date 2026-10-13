@@ -1,8 +1,8 @@
-# FMS Engine v14 — Live Control Tower
+# FMS Engine v14 — Live FMS Plant Tower
 
 ## Live-data rule
 
-The Control Tower never invents operational numbers. KPI values, process rows, delays, exceptions, task states, completion trends and project data come from PostgreSQL-backed execution records.
+The FMS Plant Tower never invents operational numbers. KPI values, process rows, delays, exceptions, task states, completion trends and project data come from PostgreSQL-backed execution records.
 
 When there is no real execution data, the dashboard shows an explicit empty state instead of fabricated KPI values.
 
@@ -14,7 +14,7 @@ A form submission is not stage completion. The PC decision controls completion a
 
 ## New live views
 
-- Control Tower — live KPIs, active process performance, stage-status distribution and workload indicators.
+- FMS Plant Tower — live KPIs, active process performance, stage-status distribution and workload indicators.
 - Projects / Instances — actual FMS executions.
 - Project Control Center — project KPIs, complete workflow visualization and stage execution controls.
 - Active Work — running instances.

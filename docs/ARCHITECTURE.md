@@ -4,7 +4,7 @@
 
 The application deliberately separates operational contexts:
 
-- Control Tower: aggregate PC view
+- FMS Plant Tower: aggregate PC view
 - My Work: task queue
 - FMS Catalog: configuration catalog
 - FMS Detail: one FMS definition

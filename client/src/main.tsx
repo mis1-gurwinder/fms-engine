@@ -11,6 +11,7 @@ import {
 import "./styles.css";
 import formCatalog from "./formCatalog.json";
 import { OverallDashboard, FmsDashboard } from "./dashboard";
+import { formAlerts, fireAlert, LIVE_MS } from "./live";
 
 type Field = {
   key: string;
@@ -110,7 +111,7 @@ async function api(
    ========================================================= */
 
 const nav = [
-  ["/", "⌂", "Plant Tower"],
+  ["/", "⌂", "FMS Plant Tower"],
   ["/fms", "▦", "FMS Catalog"],
   ["/builder", "✦", "FMS Builder"],
   ["/audit", "◷", "Audit Trail"],
@@ -691,7 +692,7 @@ function LoginPage({ onAuthenticated }: { onAuthenticated: () => void }) {
           <div className="logo">F</div>
 
           <div>
-            <b>FMS Plant</b>
+            <b>FMS Control</b>
             <small>Live Operations Engine</small>
           </div>
         </div>
@@ -854,7 +855,7 @@ function Layout({ children }: { children: React.ReactNode }) {
 
       <nav className="mobileNav">
         {visibleNav.slice(0, 4).map(([to, i, n]) => (
-          <NavLink key={to} to={to}><span>{i}</span><small>{n.split(" ")[0]}</small></NavLink>
+          <NavLink key={to} to={to}><span>{i}</span><small>{({ "/": "Tower", "/fms": "Catalog", "/builder": "Builder", "/audit": "Audit", "/users": "Users" } as Record<string, string>)[to] || n.split(" ")[0]}</small></NavLink>
         ))}
       </nav>
     </div>
@@ -930,7 +931,7 @@ function Empty({
 }
 
 /* =========================================================
-   Plant TOWER
+   FMS PLANT TOWER
    ========================================================= */
 
 function ControlTower() {
@@ -939,6 +940,7 @@ function ControlTower() {
   const [smtpTesting, setSmtpTesting] = useState(false);
   const [dashboard, setDashboard] = useState<any>(null);
   const [dashboardError, setDashboardError] = useState("");
+  const prevKpi = useRef<{ sent: number; sub: number } | null>(null);
 
   const testSmtp = async () => {
     setSmtpTesting(true);
@@ -983,11 +985,25 @@ function ControlTower() {
   useEffect(() => {
     let alive = true;
     const loadDashboard = async () => {
-      try { const result = await api("/dashboard"); if (alive) { setDashboard(result); setDashboardError(""); } }
+      try {
+        const result = await api("/dashboard");
+        if (alive) {
+          const k = result?.kpis || {};
+          const cur = { sent: Number(k.formsSent || 0), sub: Number(k.formsSubmitted || 0) };
+          const p = prevKpi.current;
+          if (p) {
+            if (cur.sub > p.sub) fireAlert("Doer submitted the form", "A stage form was submitted on the FMS Plant Tower");
+            else if (cur.sent > p.sent) fireAlert("Form sent to doer", "A stage form was emailed to the doer");
+          }
+          prevKpi.current = cur;
+          setDashboard(result);
+          setDashboardError("");
+        }
+      }
       catch (e: any) { if (alive) { setDashboardError(e.message || "Dashboard metrics are unavailable"); setDashboard(null); } }
     };
     loadDashboard();
-    const timer = window.setInterval(loadDashboard, 30000);
+    const timer = window.setInterval(loadDashboard, LIVE_MS);
     const onChanged = () => loadDashboard();
     window.addEventListener("fms-data-changed", onChanged);
     return () => { alive = false; window.clearInterval(timer); window.removeEventListener("fms-data-changed", onChanged); };
@@ -995,7 +1011,7 @@ function ControlTower() {
 
   return (
     <Page
-      title="Operational Plant Tower"
+      title="Operational FMS Plant Tower"
       sub="Live command center. No sample projects or pre-filled execution data are loaded."
       action={
         <div className="actionBar">
@@ -1024,7 +1040,7 @@ function ControlTower() {
         ))}
       </div>
       <div className="card panel dashboardStageKpis">
-        <div className="panelHead"><div><h3>Stage execution overview</h3><small>Calculated from live PostgreSQL workflow stages; refreshed every 30 seconds.</small></div><span className="livePill"><i /> LIVE</span></div>
+        <div className="panelHead"><div><h3>Stage execution overview</h3><small>Calculated from live PostgreSQL workflow stages; refreshed every 5 seconds.</small></div><span className="livePill"><i /> LIVE</span></div>
         {dashboardError ? <div className="warning">{dashboardError}</div> : !dashboard?.hasLiveData ? <div className="emptyLive">No live FMS records yet. Create the first FMS to activate operational KPIs.</div> : <div className="stageKpiStrip">
           <div className="stageKpi kpiGreen"><span>DONE</span><b>{dashboard.doneStages}</b></div>
           <div className="stageKpi kpiYellow"><span>READY / IN PROGRESS</span><b>{dashboard.workingStages}</b></div>
@@ -1337,7 +1353,7 @@ async function extractZipStageCandidates(file: File): Promise<{ names: string[];
     const ext = entry.name.toLowerCase().split(".").pop();
     let text = "";
     if (ext === "pdf") {
-      try { text = await extractPdfText(new File([entry.data], entry.name, { type: "application/pdf" })); } catch { /* Use filename-derived stage names if PDF text isn't extractable. */ }
+      try { text = await extractPdfText(new File([entry.data as BlobPart], entry.name, { type: "application/pdf" })); } catch { /* Use filename-derived stage names if PDF text isn't extractable. */ }
     } else {
       text = new TextDecoder().decode(entry.data);
       if (ext === "html" || ext === "htm" || ext === "xml") text = text.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<style[\s\S]*?<\/style>/gi, " ").replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&");
@@ -1791,7 +1807,7 @@ function Builder() {
                       description: e.target.value,
                     })
                   }
-                  placeholder="Optional: what does this FMS plant control?"
+                  placeholder="Optional: what does this FMS control?"
                 />
               </label>
             </div>
@@ -2104,7 +2120,7 @@ function FormEditor({
       </div>
       <div className="googleResponseNote">
         <div className="responseIcon">↗</div>
-        <div><b>PC reviews responses in Google Sheets</b><p>The doer submits the linked Google Form. PC opens the same Google Form, selects <b>Responses → View in Sheets</b>, and reviews the response sheet there. A form submission alone does not mark the FMS stage DONE.</p></div>
+        <div><b>PC reviews responses in FMS Engine</b><p>The doer submits the linked Google Form. The answers appear automatically on the stage page under <b>Doer responses</b>. Review them there. The linked Google Sheet stays as a backup. A form submission alone does not mark the stage DONE.</p></div>
       </div>
       <div className="editorFooter">
         {stage.googleFormUrl && <a className="btn ghost" href={stage.googleFormUrl} target="_blank" rel="noreferrer">↗ Open Google Form</a>}
@@ -2298,6 +2314,10 @@ function AddStageForm({ fmsId, onAdded }: { fmsId: string; onAdded: () => void }
 
 function FmsDetail() {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const currentUser = useCurrentUser();
+  const canDeleteFms = Boolean(currentUser?.role === "ADMIN" || currentUser?.permissions?.includes("FMS_DELETE"));
+  const canEditStages = Boolean(currentUser?.role === "ADMIN" || currentUser?.permissions?.includes("FMS_EDIT"));
 
   const [f, setF] = useState<FMS | null>(null);
 
@@ -2326,6 +2346,44 @@ function FmsDetail() {
     };
   }, [id]);
 
+  const alertSnap = useRef<Record<string, string>>({});
+  useEffect(() => {
+    if (!id) return;
+    const tick = () => {
+      fetchFmsById(id).then((x) => {
+        setF(x);
+        alertSnap.current = formAlerts(alertSnap.current, x.stages, x.code);
+      }).catch(() => undefined);
+    };
+    tick();
+    const timer = window.setInterval(tick, LIVE_MS);
+    return () => window.clearInterval(timer);
+  }, [id]);
+
+  const deleteFms = async () => {
+    if (!f) return;
+    if (!window.confirm(`Delete ${f.code} · ${f.name}? All its stages, Google Form links and doer responses will be removed. This cannot be undone.`)) return;
+    try {
+      await api(`/fms/${encodeURIComponent(f.id)}`, { method: "DELETE" });
+      window.dispatchEvent(new Event("fms-data-changed"));
+      navigate("/fms");
+    } catch (e: any) {
+      window.alert(e.message || "Could not delete the FMS.");
+    }
+  };
+
+  const deleteStage = async (st: Stage) => {
+    if (!f) return;
+    if (!window.confirm(`Delete stage "${st.name}"? Later stages move up one number. This cannot be undone.`)) return;
+    try {
+      await api(`/fms/${encodeURIComponent(f.id)}/stages/${encodeURIComponent(st.id)}`, { method: "DELETE" });
+      setF(await fetchFmsById(f.id));
+      window.dispatchEvent(new Event("fms-data-changed"));
+    } catch (e: any) {
+      window.alert(e.message || "Could not delete the stage.");
+    }
+  };
+
   if (loading) {
     return <Page title="Loading FMS" sub="Retrieving live FMS data." />;
   }
@@ -2348,9 +2406,16 @@ function FmsDetail() {
       title={`${f.code} · ${f.name}`}
       sub={`${f.plant} · ${f.department} · live configuration`}
       action={
-        <NavLink className="btn ghost" to="/fms">
-          ← Catalog
-        </NavLink>
+        <div className="actionBar">
+          <NavLink className="btn ghost" to="/fms">
+            ← Catalog
+          </NavLink>
+          {canDeleteFms && (
+            <button className="btn btn-outline-danger" type="button" onClick={deleteFms}>
+              Delete FMS
+            </button>
+          )}
+        </div>
       }
     >
       <div className="hero card">
@@ -2391,6 +2456,18 @@ function FmsDetail() {
         <div><span className="eyebrow">TIMESTAMP GENERATED</span><b>Created: {displayDateTime(f.createdAt)}</b><small>Stage 01 start time is recorded when the FMS is created. Every next stage starts when PC approves the preceding stage.</small></div>
         <div className="fmsProgressTrack"><i style={{ width: `${f.stages.length ? Math.round(f.stages.filter(st => String(st.status || "").toUpperCase() === "DONE").length / f.stages.length * 100) : 0}%` }} /></div>
       </div>
+
+      {(() => {
+        const last = f.stages[f.stages.length - 1];
+        const manual = !f.workflowMode || f.workflowMode === "MANUAL";
+        if (!last || !manual || String(last.status || "").toUpperCase() !== "DONE") return null;
+        return (
+          <div className="alert alert-warning d-flex justify-content-between align-items-center flex-wrap gap-2" role="alert">
+            <span><b>PC marked {last.name} as DONE.</b> Create the next stage below and send its Google Form to the doer.</span>
+            <a className="btn btn-sm btn-dark" href="#add-stage">Add next stage</a>
+          </div>
+        );
+      })()}
 
       <FmsDashboard name={f.name} stages={f.stages} />
 
@@ -2470,11 +2547,19 @@ function FmsDetail() {
               <NavLink className="btn ghost" to={`/fms/${f.id}/stage/${s.id}`}>
                 Open stage →
               </NavLink>
+
+              {canEditStages && (
+                <button className="btn btn-outline-danger btn-sm" type="button" onClick={() => deleteStage(s)}>
+                  Delete stage
+                </button>
+              )}
             </div>
           ))}
         </div>
       </div>
-      <AddStageForm fmsId={f.id} onAdded={() => fetchFmsById(f.id).then(setF)} />
+      <div id="add-stage">
+        <AddStageForm fmsId={f.id} onAdded={() => fetchFmsById(f.id).then(setF)} />
+      </div>
     </Page>
   );
 }
@@ -2482,6 +2567,44 @@ function FmsDetail() {
 /* =========================================================
    STAGE LIVE
    ========================================================= */
+
+type StageResponse = { id: string; respondent: string; submittedAt: string; answers: Record<string, string> };
+
+function StageResponses({ fmsId, stageId }: { fmsId: string; stageId: string }) {
+  const [list, setList] = useState<StageResponse[] | null>(null);
+  const [error, setError] = useState("");
+  useEffect(() => {
+    let alive = true;
+    api(`/fms/${encodeURIComponent(fmsId)}/stages/${encodeURIComponent(stageId)}/responses`)
+      .then((r: any) => { if (alive) setList(r.responses || []); })
+      .catch((e: any) => { if (alive) setError(e.message || "Could not load responses."); });
+    return () => { alive = false; };
+  }, [fmsId, stageId]);
+  if (error) return <div className="alert alert-danger">{error}</div>;
+  if (list === null) return <div className="chartEmpty">Loading responses…</div>;
+  if (!list.length) return <div className="chartEmpty">No form responses yet. They appear here as soon as the doer submits.</div>;
+  return (
+    <div className="row g-3">
+      {list.map((r, i) => (
+        <div className="col-12 col-lg-6" key={r.id}>
+          <div className="responseCard h-100">
+            <div className="responseHead d-flex flex-wrap justify-content-between gap-2">
+              <b>{i === 0 ? "Latest" : `Response ${list.length - i}`} · {r.respondent || "Unknown respondent"}</b>
+              <small>{displayDateTime(r.submittedAt)}</small>
+            </div>
+            <dl className="responseFields row row-cols-1 row-cols-sm-2 g-2 mb-0">
+              {Object.entries(r.answers).map(([q, a]) => (
+                <div className="col" key={q}>
+                  <div className="responseField"><dt>{q}</dt><dd>{a || "—"}</dd></div>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 function StageLive() {
   const { id, stageId } = useParams();
@@ -2514,9 +2637,24 @@ function StageLive() {
     return () => { alive = false; };
   }, [id, stageId]);
 
+  const alertSnap = useRef<Record<string, string>>({});
+  useEffect(() => {
+    if (!id) return;
+    const tick = () => {
+      fetchFmsById(id).then((x) => {
+        setF(x);
+        setS(x.stages.find((st: Stage) => st.id === stageId) || null);
+        alertSnap.current = formAlerts(alertSnap.current, x.stages, x.code);
+      }).catch(() => undefined);
+    };
+    tick();
+    const timer = window.setInterval(tick, LIVE_MS);
+    return () => window.clearInterval(timer);
+  }, [id, stageId]);
+
   const decide = async (action: "DONE" | "RETURN_TO_DOER") => {
     if (!f || !s) return;
-    if (action === "DONE" && !window.confirm("Confirm you reviewed the Google Sheets response and approve this stage? The next stage will unlock.")) return;
+    if (action === "DONE" && !window.confirm("Confirm you reviewed the doer responses and approve this stage? The next stage will unlock.")) return;
     if (action === "RETURN_TO_DOER" && !pcFeedback.trim()) { setNotice("Enter feedback explaining what the doer must correct before returning the form."); return; }
     setBusy(true); setNotice("");
     try {
@@ -2536,12 +2674,12 @@ function StageLive() {
   const status = String(s.status || "LOCKED").toUpperCase();
   const locked = status === "LOCKED";
   const done = status === "DONE";
-  return <Page title={`${f.code} · ${s.name}`} sub="The doer submits through Google Forms. PC checks the linked response Sheet and records the decision here.">
-    <div className="whatGrid stageFourMetrics stageLiveMetrics">
-      <Info label="PLANNED" value={displayDateTime(s.startedAt || s.plannedAt)} />
-      <Info label="ACTUAL" value={displayDateTime(s.actualCompletedAt)} />
-      <Info label="STATUS" value={stageStatusLabel(s)} />
-      <Info label="TIME DELAY" value={s.delayMinutes === null || s.delayMinutes === undefined ? "Pending PC DONE" : Number(s.delayMinutes) < 0 ? `Early by ${displayDuration(-Number(s.delayMinutes))}` : `${displayDuration(Number(s.delayMinutes))} late`} />
+  return <Page title={`${f.code} · ${s.name}`} sub="The doer submits through Google Forms. PC reviews the responses below and records the decision here.">
+    <div className="row row-cols-2 row-cols-md-4 g-3 mb-3">
+      <div className="col"><Info label="PLANNED" value={displayDateTime(s.startedAt || s.plannedAt)} /></div>
+      <div className="col"><Info label="ACTUAL" value={displayDateTime(s.actualCompletedAt)} /></div>
+      <div className="col"><Info label="STATUS" value={stageStatusLabel(s)} /></div>
+      <div className="col"><Info label="TIME DELAY" value={s.delayMinutes === null || s.delayMinutes === undefined ? "Pending PC DONE" : Number(s.delayMinutes) < 0 ? `Early by ${displayDuration(-Number(s.delayMinutes))}` : `${displayDuration(Number(s.delayMinutes))} late`} /></div>
     </div>
     <div className="card panel stageProcessContext">
       <div className="panelHead"><div><h3>Stage process definition</h3><small>Operational instructions for this stage: what must happen, who owns it, how it is performed, and when it applies.</small></div></div>
@@ -2554,13 +2692,14 @@ function StageLive() {
       <div className="stageContextEdit"><NavLink className="btn ghost" to={`/fms/${f.id}/stage/${s.id}/edit`}>Configure Google Form link</NavLink></div>
     </div>
     <div className="card panel googleSheetPanel">
-      <div className="panelHead"><div><h3>Google Form & response sheet</h3><small>Questions and submissions remain in Google Workspace; the FMS Engine does not duplicate form responses.</small></div></div>
+      <div className="panelHead"><div><h3>Google Form & response sheet</h3><small>Responses are copied into the FMS Engine when submitted. The linked Google Sheet stays as a backup.</small></div></div>
       {s.googleFormUrl ? <div className="formLinkActions"><a className="btn primary" href={s.googleFormUrl} target="_blank" rel="noreferrer">↗ Open Google Form</a>{s.responseSheetUrl ? <a className="btn ghost" href={s.responseSheetUrl} target="_blank" rel="noreferrer">PC: Responses → View in Sheets</a> : <span className="btn ghost" style={{ opacity: 0.6, cursor: "default" }}>Response sheet link not set</span>}</div> : <Empty title="Google Form URL not configured" text="Add the existing Google Form URL and responsible Workspace email before dispatch." action={<NavLink className="btn primary" to={`/fms/${f.id}/stage/${s.id}/edit`}>Configure stage link</NavLink>} />}
       {s.formStatus === "SUBMITTED" && <div className="successBox"><b>✓ Doer submitted the Google Form</b><p>Submitted {displayDateTime(s.formSubmittedAt || "")}. Check the linked Sheet, then mark DONE.</p></div>}
-      <div className="googleResponseNote"><div className="responseIcon">✓</div><div><b>PC review checklist</b><p>Open the linked response Sheet, verify the submitted row and evidence, then return here. A form submission does not automatically complete the stage.</p></div></div>
+      <div className="responsePanel"><h4>Doer responses</h4><StageResponses fmsId={f.id} stageId={s.id} /></div>
+      <div className="googleResponseNote"><div className="responseIcon">✓</div><div><b>PC review checklist</b><p>Check the responses below, then mark DONE or return to the doer here. A form submission does not automatically complete the stage.</p></div></div>
       {notice && <div className="editorNotice">{notice}</div>}
       {s.pcFeedback && <div className="correctionFeedback"><b>PC feedback for doer</b><p>{s.pcFeedback}</p></div>}
-      {locked ? <div className="warning">This stage is locked. PC must approve the previous stage first.</div> : done ? <div className="successBox"><b>✓ Stage completed</b><p>PC approval timestamp is saved. The next stage is unlocked if one remains.</p></div> : canDecide ? <div className="pcDecisionBar"><b>PC review decision</b><p>Choose DONE only after checking the Google Sheets response. If the response is incorrect or incomplete, return it to the doer with clear feedback.</p><label className="fieldLabel correctionLabel">Feedback for doer (required when returning)<textarea className="fieldInput correctionTextarea" value={pcFeedback} onChange={(e) => setPcFeedback(e.target.value)} placeholder="Explain what is incorrect and what the doer must submit again…" rows={3} /></label><div className="actionBar"><button className="btn ghost returnDoerBtn" disabled={busy || !s.googleFormUrl} onClick={() => decide("RETURN_TO_DOER")}>↩ Return to doer · resubmit</button><button className="btn createBtn" disabled={busy || !s.googleFormUrl} onClick={() => decide("DONE")}>{busy ? "Saving…" : "✓ DONE & unlock next"}</button></div></div> : <div className="warning">PC decision controls are restricted to accounts with the PC_DECISION permission. You can still open the Google Form to review its responses.</div>}
+      {locked ? <div className="warning">This stage is locked. PC must approve the previous stage first.</div> : done ? <div className="successBox"><b>✓ Stage completed</b><p>PC approval timestamp is saved. The next stage is unlocked if one remains.</p></div> : canDecide ? <div className="pcDecisionBar"><b>PC review decision</b><p>Choose DONE only after checking the doer responses above. If the response is incorrect or incomplete, return it to the doer with clear feedback.</p><label className="fieldLabel correctionLabel">Feedback for doer (required when returning)<textarea className="fieldInput correctionTextarea" value={pcFeedback} onChange={(e) => setPcFeedback(e.target.value)} placeholder="Explain what is incorrect and what the doer must submit again…" rows={3} /></label><div className="actionBar"><button className="btn ghost returnDoerBtn" disabled={busy || !s.googleFormUrl} onClick={() => decide("RETURN_TO_DOER")}>↩ Return to doer · resubmit</button><button className="btn createBtn" disabled={busy || !s.googleFormUrl} onClick={() => decide("DONE")}>{busy ? "Saving…" : "✓ DONE & unlock next"}</button></div></div> : <div className="warning">PC decision controls are restricted to accounts with the PC_DECISION permission. You can still open the Google Form to review its responses.</div>}
       <div className="actionBar reviewActions"><NavLink className="btn ghost" to={`/fms/${f.id}/stage/${s.id}/edit`}>Configure Google Form link</NavLink><NavLink className="btn ghost" to={`/fms/${f.id}`}>← Return to workflow</NavLink></div>
     </div>
   </Page>;

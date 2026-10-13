@@ -439,3 +439,16 @@ html,body{background:var(--df-canvas);color:var(--df-charcoal)}
 .flowFmsHead{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;font-size:13px;color:#2b2625}
 .flowFmsHead small{color:#7a6f6b}
 @media(max-width:640px){.barRow,.delayRow{grid-template-columns:1fr}.barRow b,.lateText,.earlyText{text-align:left}}
+
+/* ===== Stage responses ===== */
+.responsePanel{margin:14px 0}
+.responsePanel h4{margin:0 0 10px;font-size:15px;color:#2b2625}
+.responseList{display:grid;gap:12px}
+.responseCard{border:1px solid #e5e7eb;border-radius:12px;padding:14px;background:#fff}
+.responseHead{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:10px;color:#2b2625;font-size:14px}
+.responseHead small{color:#7a6f6b}
+.responseFields{margin:0;display:grid;gap:8px}
+.responseField{display:grid;grid-template-columns:minmax(120px,240px) 1fr;gap:12px;font-size:13px}
+.responseField dt{color:#7a6f6b;font-weight:600}
+.responseField dd{margin:0;color:#2b2625;overflow-wrap:anywhere;white-space:pre-wrap}
+@media(max-width:640px){.responseField{grid-template-columns:1fr}}

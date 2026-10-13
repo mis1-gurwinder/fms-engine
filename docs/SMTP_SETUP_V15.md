@@ -28,7 +28,7 @@ SMTP_FROM=FMS Control <mis@dinerofoodworks.com>
 
 7. Restart the Node.js server.
 8. Sign into FMS with an authorized account.
-9. Use the SMTP test action in the Control Tower. The test endpoint is protected by `SYSTEM_CONFIG`.
+9. Use the SMTP test action in the FMS Plant Tower. The test endpoint is protected by `SYSTEM_CONFIG`.
 10. Confirm the message arrives.
 
 If App Passwords are unavailable for the Workspace organization, do not try to bypass the policy. Use Option B or the organization's approved mail service.

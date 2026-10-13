@@ -1,6 +1,6 @@
 # FMS Engine v25 — Stage 01 auto-email on create, submission status on stage
 
-A responsive FMS workspace using the requested brand palette and Poppins typography. The Control Tower and FMS detail page show the Tata 18-stage process map after the first FMS is created.
+A responsive FMS workspace using the requested brand palette and Poppins typography. The FMS Plant Tower and FMS detail page show the Tata 18-stage process map after the first FMS is created.
 
 ## Core features retained from v22
 
@@ -21,7 +21,7 @@ A responsive FMS workspace using the requested brand palette and Poppins typogra
 - **Actual completion timestamp** is recorded automatically when PC marks the stage DONE after reviewing the Google Sheet response.
 - **Time taken** is `actual completion timestamp - task-created/activated timestamp`. The UI does not assume a 4-hour target or create future due dates automatically.
 - **Deadline variance is optional.** A stage is only classified as over SLA when the company has explicitly configured a real `sla_minutes` target. Elapsed time by itself is not incorrectly labeled as late.
-- **Control Tower KPIs** query live PostgreSQL records for total FMS, running FMS, completed FMS, configured-SLA overruns, exceptions, and stage-level DONE / READY-IN-PROGRESS / LOCKED counts. Empty database state is explicitly shown rather than inventing metrics. Dashboard metrics refresh every 30 seconds.
+- **FMS Plant Tower KPIs** query live PostgreSQL records for total FMS, running FMS, completed FMS, configured-SLA overruns, exceptions, and stage-level DONE / READY-IN-PROGRESS / LOCKED counts. Empty database state is explicitly shown rather than inventing metrics. Dashboard metrics refresh every 30 seconds.
 - Each stage displays task-created/activated time, actual completion time, and time taken. PC decisions are the gate for stage completion and unlocking the next stage.
 
 ## Requirements
@@ -190,7 +190,7 @@ For an existing v21 database, run `database/migrations_v22_pc_return_to_doer.sql
 
 ## v23 UI correction: preserve full FMS, simplify individual stage only
 
-- Restored the complete Control Tower, FMS Catalog, FMS Builder, FMS-level KPIs, workflow diagram, stage map metadata, Google Form configuration, and other project navigation from the full application.
+- Restored the complete FMS Plant Tower, FMS Catalog, FMS Builder, FMS-level KPIs, workflow diagram, stage map metadata, Google Form configuration, and other project navigation from the full application.
 - The overall FMS workflow diagram is compact again: stage number, stage name, status/gate, Google Form linked/pending, and Configure link. It does not show the individual-stage four-metric panel or PC decision buttons.
 - The full StageLive detail page alone shows exactly four execution metrics: Planned, Actual, Status, Time Delay.
 - PC decision actions (DONE & unlock next, Return to doer with required feedback) are only inside the individual stage detail page. No DONE/return buttons are placed on the overall FMS page.
@@ -200,7 +200,7 @@ For an existing v21 database, run `database/migrations_v22_pc_return_to_doer.sql
 
 ## v23 correction requested
 
-The whole FMS experience is retained: Control Tower, FMS Catalog, FMS Builder (PDF / ZIP stage pack / Manual), FMS-level KPIs, the compact sequential workflow diagram, full stage map metadata, Google Form URL configuration, users/access and all existing navigation.
+The whole FMS experience is retained: FMS Plant Tower, FMS Catalog, FMS Builder (PDF / ZIP stage pack / Manual), FMS-level KPIs, the compact sequential workflow diagram, full stage map metadata, Google Form URL configuration, users/access and all existing navigation.
 
 The four-field summary (Planned, Actual, Status, Time Delay) and PC decision actions are shown on the individual stage detail page only. The whole-FMS flow nodes are compact and do not repeat those four metrics. DONE and Return to doer controls exist only inside the stage detail page.
 
@@ -227,4 +227,3 @@ This v23 release is a frontend/UI correction on top of v22 and does not add a da
 - **Doer submits** the Google Form. The stage shows *Doer submitted · PC review pending* on the FMS workflow and the stage page.
 - **Backup Sheet**: the Google Form's linked response Sheet receives every response. To also send the submission to the FMS Engine, install `google-apps-script/FMS-Form-Submit-Webhook.gs` in that Sheet (Extensions > Apps Script, then add an On form submit trigger). Set `FORM_WEBHOOK_SECRET` in `server/.env` and the same value in the script. The server must be reachable from Google (public URL); locally, the Sheet still holds every response.
 - Submission never completes a stage. PC still marks DONE.
-=======

@@ -1,7 +1,7 @@
 import React from "react";
 
 /* =========================================================
-   DASHBOARD CHARTS (plain SVG / CSS, no chart library)
+   DASHBOARD CHARTS (plain SVG; layout uses Bootstrap 5 grid)
    ========================================================= */
 
 export type DashStage = {
@@ -63,10 +63,24 @@ function fmtHours(v: number) {
 
 function Kpi({ label, value, sub }: { label: string; value: string | number; sub: string }) {
   return (
-    <div className="card metric">
-      <span>{label}</span>
-      <strong>{value}</strong>
-      <small>{sub}</small>
+    <div className="col-6 col-xl-2">
+      <div className="card metric h-100">
+        <span>{label}</span>
+        <strong>{value}</strong>
+        <small>{sub}</small>
+      </div>
+    </div>
+  );
+}
+
+function ChartCard({ title, children, note }: { title: string; children: React.ReactNode; note?: string }) {
+  return (
+    <div className="col-12 col-lg-4">
+      <div className="card panel h-100">
+        <h3 className="chartTitle">{title}</h3>
+        {children}
+        {note && <small className="chartNote">{note}</small>}
+      </div>
     </div>
   );
 }
@@ -223,7 +237,7 @@ export function OverallDashboard({ data }: { data: any }) {
   return (
     <div className="fmsDashboard">
       <div className="dashTitle"><span className="eyebrow">OVERALL DASHBOARD · ALL FMS</span></div>
-      <div className="metrics dashKpis">
+      <div className="row g-3 dashKpis">
         <Kpi label="STAGE PROGRESS" value={`${k.progressPct ?? 0}%`} sub={`${data.doneStages}/${data.totalStages} stages DONE`} />
         <Kpi label="ON-TIME RATE" value={k.onTimePct == null ? "—" : `${k.onTimePct}%`} sub="DONE stages within planned time" />
         <Kpi label="AVG DELAY" value={fmtSigned(k.avgDelayMinutes)} sub="+ late · - early (DONE stages)" />
@@ -231,19 +245,16 @@ export function OverallDashboard({ data }: { data: any }) {
         <Kpi label="PC PENDING" value={k.pcPending ?? 0} sub="Doer submitted, awaiting PC" />
         <Kpi label="FORMS SENT" value={k.formsSent ?? 0} sub={`${k.formsSubmitted ?? 0} submitted by doers`} />
       </div>
-      <div className="dashGrid">
-        <div className="card panel">
-          <h3 className="chartTitle">Stage status</h3>
+      <div className="row g-3">
+        <ChartCard title="Stage status">
           <DonutChart counts={counts} center={data.totalStages} sub="stages" />
-        </div>
-        <div className="card panel">
-          <h3 className="chartTitle">Progress by FMS</h3>
+        </ChartCard>
+        <ChartCard title="Progress by FMS">
           <ProgressList rows={fmsList.map((f) => ({ label: f.code, sub: `${f.done}/${f.total} stages`, pct: f.progressPct }))} />
-        </div>
-        <div className="card panel">
-          <h3 className="chartTitle">Average delay by FMS</h3>
+        </ChartCard>
+        <ChartCard title="Average delay by FMS">
           <DelayBars rows={fmsList.map((f) => ({ label: f.code, minutes: f.avgDelayMinutes }))} />
-        </div>
+        </ChartCard>
       </div>
       <div className="card panel">
         <h3 className="chartTitle">Flow of all FMS</h3>
@@ -292,7 +303,7 @@ export function FmsDashboard({ name, stages }: { name: string; stages: DashStage
   return (
     <div className="fmsDashboard">
       <div className="dashTitle"><span className="eyebrow">DASHBOARD · {name}</span></div>
-      <div className="metrics dashKpis">
+      <div className="row g-3 dashKpis">
         <Kpi label="STAGE PROGRESS" value={`${pct}%`} sub={`${done}/${stages.length} stages DONE`} />
         <Kpi label="ON-TIME RATE" value={delays.length ? `${Math.round((onTime / delays.length) * 100)}%` : "—"} sub="DONE stages within planned time" />
         <Kpi label="AVG DELAY" value={fmtSigned(avgDelay)} sub="+ late · - early (DONE stages)" />
@@ -300,28 +311,24 @@ export function FmsDashboard({ name, stages }: { name: string; stages: DashStage
         <Kpi label="PC PENDING" value={pcPending} sub="Doer submitted, awaiting PC" />
         <Kpi label="FORMS SENT" value={formsSent} sub="Stages with form emailed" />
       </div>
-      <div className="dashGrid">
-        <div className="card panel">
-          <h3 className="chartTitle">Stage status</h3>
+      <div className="row g-3">
+        <ChartCard title="Stage status">
           <DonutChart counts={counts} center={stages.length} sub="stages" />
-        </div>
-        <div className="card panel">
-          <h3 className="chartTitle">Planned vs actual hours</h3>
+        </ChartCard>
+        <ChartCard title="Planned vs actual hours" note="Grey = planned hours · green = actual on time · red = actual late">
           <PlannedActualChart rows={stages.map((st, i) => ({
             label: String(i + 1).padStart(2, "0"),
             planned: st.plannedHours ?? null,
             actual: bucketOf(statusOf(st, i)) === "DONE" && st.actualTatMinutes !== null && st.actualTatMinutes !== undefined ? st.actualTatMinutes / 60 : null,
             late: (st.delayMinutes ?? 0) > 0,
           }))} />
-          <small className="chartNote">Grey = planned hours · green = actual on time · red = actual late</small>
-        </div>
-        <div className="card panel">
-          <h3 className="chartTitle">Time delay per stage</h3>
+        </ChartCard>
+        <ChartCard title="Time delay per stage">
           <DelayBars rows={stages.map((st, i) => ({
             label: `${String(i + 1).padStart(2, "0")} ${st.name}`,
             minutes: bucketOf(statusOf(st, i)) === "DONE" ? (st.delayMinutes ?? null) : null,
           }))} />
-        </div>
+        </ChartCard>
       </div>
       <div className="card panel">
         <h3 className="chartTitle">Stage flow</h3>

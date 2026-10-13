@@ -34,7 +34,7 @@ The v15 migration seeds these accounts as active and gives them all-plant/all-de
 
 ### MD — Managing Director
 
-Highest management visibility and authorized control. The MD can view Control Tower, FMS definitions, operational instances, workflow state, audit information and management reporting. The MD can create/edit FMS definitions and perform authorized operational control actions. Technical role administration is not automatically included.
+Highest management visibility and authorized control. The MD can view FMS Plant Tower, FMS definitions, operational instances, workflow state, audit information and management reporting. The MD can create/edit FMS definitions and perform authorized operational control actions. Technical role administration is not automatically included.
 
 ### MDO — MIS / MDO Administrator
 
@@ -42,7 +42,7 @@ System/FMS administrator. The MDO can configure reusable FMS definitions, stages
 
 ### EA — Executive Assistant / HR
 
-Monitoring/reporting role. EA can view Control Tower, FMS definitions, projects, audit and reports and can see the authorized-user directory. EA is not a workflow approver by default.
+Monitoring/reporting role. EA can view FMS Plant Tower, FMS definitions, projects, audit and reports and can see the authorized-user directory. EA is not a workflow approver by default.
 
 ### PC — Process Coordinator
 

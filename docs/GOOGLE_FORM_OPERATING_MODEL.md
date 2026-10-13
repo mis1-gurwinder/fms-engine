@@ -3,7 +3,7 @@
 ## Who sees what
 
 - Operator / responsible person: only the currently assigned Google Form.
-- PC: full FMS Control Tower, submissions, dependency state, review and completion decisions.
+- PC: full FMS FMS Plant Tower, submissions, dependency state, review and completion decisions.
 - EC / MDO / MD: management/review dashboards according to RBAC.
 
 ## Lifecycle
