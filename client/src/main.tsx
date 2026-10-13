@@ -47,6 +47,7 @@ type Stage = {
   actualCompletedAt?: string;
   actualTatMinutes?: number | null;
   delayMinutes?: number | null;
+  delaySeconds?: number | null;
   pcReviewStatus?: string;
   pcFeedback?: string;
   slaMinutes?: number | null;
@@ -230,6 +231,7 @@ async function fetchFmsById(id: string): Promise<FMS> {
       actualCompletedAt: s.actual_completed_at || s.actualCompletedAt || "",
       actualTatMinutes: s.actual_tat_minutes === null || s.actual_tat_minutes === undefined ? (s.actualTatMinutes ?? null) : Number(s.actual_tat_minutes),
       delayMinutes: s.delay_minutes === null || s.delay_minutes === undefined ? (s.delayMinutes ?? null) : Number(s.delay_minutes),
+      delaySeconds: s.delay_seconds === null || s.delay_seconds === undefined ? (s.delaySeconds ?? null) : Number(s.delay_seconds),
       pcReviewStatus: s.pc_review_status || s.pcReviewStatus || "PENDING",
       pcFeedback: s.pc_feedback || s.pcFeedback || "",
       slaMinutes: s.sla_minutes === null || s.sla_minutes === undefined ? (s.slaMinutes ?? null) : Number(s.sla_minutes),
@@ -322,7 +324,7 @@ function displayDateTime(value?: string) {
   if (!value) return "—";
   const d = new Date(value);
   if (Number.isNaN(d.getTime())) return value;
-  return d.toLocaleString([], { dateStyle: "medium", timeStyle: "short" });
+  return d.toLocaleString([], { dateStyle: "medium", timeStyle: "medium" });
 }
 
 function displayDuration(minutes?: number | null) {
@@ -332,6 +334,22 @@ function displayDuration(minutes?: number | null) {
   const hours = Math.floor((total % 1440) / 60);
   const mins = total % 60;
   return [days ? `${days}d` : "", hours ? `${hours}h` : "", `${mins}m`].filter(Boolean).join(" ");
+}
+
+function displayDelaySeconds(total: number) {
+  const abs = Math.abs(Math.round(total));
+  const days = Math.floor(abs / 86400);
+  const hours = Math.floor((abs % 86400) / 3600);
+  const mins = Math.floor((abs % 3600) / 60);
+  const secs = abs % 60;
+  return [days ? `${days}d` : "", hours ? `${hours}h` : "", mins ? `${mins}m` : "", `${secs}s`].filter(Boolean).join(" ");
+}
+
+function stageDelayText(s: Stage) {
+  const sec = s.delaySeconds !== null && s.delaySeconds !== undefined ? Number(s.delaySeconds)
+    : s.delayMinutes !== null && s.delayMinutes !== undefined ? Number(s.delayMinutes) * 60 : null;
+  if (sec !== null) return sec <= 0 ? `Early by ${displayDelaySeconds(sec)}` : `${displayDelaySeconds(sec)} late`;
+  return String(s.status || "").toUpperCase() === "DONE" ? "—" : "Pending PC DONE";
 }
 
 function stageDelayTone(stage: Stage) {
@@ -2533,26 +2551,28 @@ function FmsDetail() {
                   <span><b>FORM SENT</b>{displayDateTime(s.formSentAt)}</span>
                   <span><b>PLANNED</b>{displayDateTime(s.plannedAt)}</span>
                   <span><b>ACTUAL</b>{displayDateTime(s.actualCompletedAt)}</span>
-                  <span className={`delayBadge ${stageDelayTone(s)}`}><b>TIME DELAY</b>{s.delayMinutes !== null && s.delayMinutes !== undefined ? (s.delayMinutes < 0 ? `Early by ${displayDuration(-s.delayMinutes)}` : `${displayDuration(s.delayMinutes)} late`) : "Pending PC DONE"}</span>
+                  <span className={`delayBadge ${stageDelayTone(s)}`}><b>TIME DELAY</b>{stageDelayText(s)}</span>
                 </div>
               </div>
 
-              <NavLink
-                className="btn ghost"
-                to={`/fms/${f.id}/stage/${s.id}/edit`}
-              >
-                Configure form
-              </NavLink>
+              <div className="stageRowActions">
+                <NavLink
+                  className="btn ghost"
+                  to={`/fms/${f.id}/stage/${s.id}/edit`}
+                >
+                  Configure form
+                </NavLink>
 
-              <NavLink className="btn ghost" to={`/fms/${f.id}/stage/${s.id}`}>
-                Open stage →
-              </NavLink>
+                <NavLink className="btn ghost" to={`/fms/${f.id}/stage/${s.id}`}>
+                  Open stage →
+                </NavLink>
 
-              {canEditStages && (
-                <button className="btn btn-outline-danger btn-sm" type="button" onClick={() => deleteStage(s)}>
-                  Delete stage
-                </button>
-              )}
+                {canEditStages && (
+                  <button className="btn btn-outline-danger" type="button" onClick={() => deleteStage(s)}>
+                    Delete stage
+                  </button>
+                )}
+              </div>
             </div>
           ))}
         </div>
@@ -2679,7 +2699,7 @@ function StageLive() {
       <div className="col"><Info label="PLANNED" value={displayDateTime(s.startedAt || s.plannedAt)} /></div>
       <div className="col"><Info label="ACTUAL" value={displayDateTime(s.actualCompletedAt)} /></div>
       <div className="col"><Info label="STATUS" value={stageStatusLabel(s)} /></div>
-      <div className="col"><Info label="TIME DELAY" value={s.delayMinutes === null || s.delayMinutes === undefined ? "Pending PC DONE" : Number(s.delayMinutes) < 0 ? `Early by ${displayDuration(-Number(s.delayMinutes))}` : `${displayDuration(Number(s.delayMinutes))} late`} /></div>
+      <div className="col"><Info label="TIME DELAY" value={stageDelayText(s)} /></div>
     </div>
     <div className="card panel stageProcessContext">
       <div className="panelHead"><div><h3>Stage process definition</h3><small>Operational instructions for this stage: what must happen, who owns it, how it is performed, and when it applies.</small></div></div>

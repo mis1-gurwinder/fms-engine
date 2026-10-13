@@ -452,3 +452,8 @@ html,body{background:var(--df-canvas);color:var(--df-charcoal)}
 .responseField dt{color:#7a6f6b;font-weight:600}
 .responseField dd{margin:0;color:#2b2625;overflow-wrap:anywhere;white-space:pre-wrap}
 @media(max-width:640px){.responseField{grid-template-columns:1fr}}
+
+/* Stage map row buttons: fixed column so labels never clip */
+.stageRowActions{display:flex;flex-direction:column;gap:8px;flex:0 0 190px;min-width:190px}
+.stageRowActions .btn{white-space:nowrap;width:100%;text-align:center;margin:0}
+@media(max-width:640px){.stageRowActions{flex:1 1 100%;min-width:0;width:100%}}
